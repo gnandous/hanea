@@ -1,0 +1,69 @@
+.nav-hadmin{
+  height: 46px;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+.error-404{
+  font-size: 350px;
+  font-family: 'Arial';
+  color: #159C81;
+}
+.media-section{
+  position: relative;
+  width: 100%;
+  height: 700px;
+}
+.front-bg{
+  position: fixed;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+video#bgvideo{
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background: url('/video/preview.jpg') no-repeat;
+  background-size: cover;
+}
+.apilogin{
+  position: absolute;
+  width: 1000px;
+  top: 20%;
+  left: 22%;
+  height: 410px;
+}
+.apiwelcome{
+  color: #FFFFFF;
+}
+.apiwelcome p{
+  font-size: 18px;
+}
+.signform{
+  background-color: #FFFFFF;
+  background: #fff;
+  margin-top: 24px;
+  padding-bottom: 15px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#dddddd, GradientType=0)";
+  border-bottom: 1px solid #ccd6dd;
+  border-left: 1px solid #e1e8ed;
+  border-right: 1px solid #e1e8ed;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+.signform input{
+  border: solid #eee 1px;
+}
+.signform a{
+  color: #333;
+}
+/*
+#haneavideo{
+  position: fixed;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+*/

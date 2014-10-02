@@ -1,0 +1,31 @@
+extends layout
+
+block append scripts
+  script(type='text/javascript' src='../js/plugins/jquery/jquery-1.11.js')
+  script(type='text/javascript' src='../js/login-validator/validationform.js')
+block content
+  #login-block.container
+        .row
+          .col-sm-6.col-md-4.col-sm-offset-3.col-md-offset-4
+            .login-box.clearfix.animated.flipInY
+              .page-icon.animated.bounceInDown
+              .login-logo
+                a(href='#')
+              hr
+              .login-form
+                .alert.alert-danger.hide
+                  button.close(type='button', data-dismiss='alert')
+                  h4 Error!
+                  | Your Error Message goes here
+                form(action='/api/signup', method='post')
+                  input#inputname.input-field(type='text', placeholder='name', name = 'name', required='required')
+                  input#inputemail.input-field(type='email', placeholder='email', name='email', required='required')
+                  input#inputpassword.input-field(type='password', placeholder='Password' name='password', required='required')
+                  input#inputpasswordConfirm.input-field(type='password', placeholder='Confirm Password', name='passwordConfirm', required='required')
+                  button#submit-form.btn.btn-login.ladda-button(data-style='expand-left')
+                    span.ladda-label Sign Up
+                  .login-links
+                    a(href='password_forgot.html') Forgot password?
+                      a(href='login.html')
+                        | Already have an account?
+                        strong Sign In
