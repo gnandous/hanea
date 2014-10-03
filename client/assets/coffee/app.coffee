@@ -11,7 +11,9 @@ define [
       controller: "UserCtrl"
       controllerUrl: "controllers/login"
     ).when("/api", angularAMD.route
-      templateUrl: '../templates/home.html'
+      templateUrl: '../templates/dashboard.html'
+      controller: "dashboard"
+      controllerUrl: "controllers/dashboard"
     ).otherwise redirectTo: "/api"
     $locationProvider.html5Mode(true)
 

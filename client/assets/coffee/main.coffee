@@ -1,12 +1,14 @@
 require.config
   baseUrl: '/js'
   paths:
-    angular:  '//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min'
+    angular:  'plugins/angular/angular.min'
     angularAMD: 'plugins/angular/angularAMD.min'
     angular_route: 'plugins/angular/angular-route'
     ngload: 'plugins/ngload'
     jquery: 'plugins/jquery/jquery.min'
     jquery_cookie: 'plugins/jquery/jquery.cookie.min'
+    classie: '../plugins/modal/js/classie'
+    modal: '../plugins/modal/js/modalEffects'
 
   shim:
     jquery:

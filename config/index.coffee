@@ -8,7 +8,7 @@ config =
   	pass: "beaucoup1"
   activation_protocol: "http://localhost:3000/activate/"
   site:
-    title: "Haute Autorité Nigérienne à L'énergie atomique"
+    title: "Hanea"
   misc:
     user:
       password:
