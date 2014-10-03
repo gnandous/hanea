@@ -7,8 +7,7 @@ require.config
     ngload: 'plugins/ngload'
     jquery: 'plugins/jquery/jquery.min'
     jquery_cookie: 'plugins/jquery/jquery.cookie.min'
-    classie: '../plugins/modal/js/classie'
-    modal: '../plugins/modal/js/modalEffects'
+    carousel: '../libs/owl/owl-carousel/owl.carousel'
 
   shim:
     jquery:
