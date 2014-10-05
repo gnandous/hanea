@@ -35,7 +35,7 @@ app.use require('connect-coffee-script')
   dest: "#{__dirname}/client/public/js"
   prefix: '/js'
 app.use express.static "#{__dirname}/client/public"
-app.use  '/api/*', express.static "#{__dirname}/client/public"
+#app.use  '/api/*', express.static "#{__dirname}/client/public"
 #APIRouter.get '/*', requestInterceptor
 #app.use '/api', jwt secret: "shhhhhhared-secret"
 require('./routes') app
