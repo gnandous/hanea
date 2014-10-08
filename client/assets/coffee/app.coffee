@@ -2,7 +2,9 @@ define [
   'angularAMD',
   'angular_route',
   'services/interceptor',
-], (angularAMD)->
+  'directives/header'
+  'directives/sidebarright'
+], (angularAMD, headerView)->
   myApp = angular.module('myApp', ['ngRoute', 'Authorization'])
 
   myApp.config ($routeProvider, $locationProvider)->

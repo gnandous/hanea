@@ -58,7 +58,7 @@ video#bgvideo{
 .signform a{
   color: #333;
 }
-/*
+
 #haneavideo{
   position: fixed;
   top:0;
@@ -66,4 +66,53 @@ video#bgvideo{
   bottom: 0;
   left: 0;
 }
-*/
+#sidebar{
+  color: white;
+  text-align: center;
+  max-width: 300px;
+  padding: 30px 26px;
+}
+.avatar{
+  width: 94px;
+  height: 94px;
+}
+#main-content{
+  /*margin-left: 370px;*/
+}
+.wrapper{
+  padding-left: 350px;
+}
+.navbar{
+  background-color: #2B2E33;
+  color: white !important;
+}
+.navbar li>a{
+  color: white !important;
+}
+.navbarinput{
+  height: 28px;
+  border-radius: 5px;
+}
+.error-main h1{
+  font-size: 170px !important;
+}
+.navbar li:hover {
+  background-color: #000;
+  -webkit-transition: background-color 1000ms linear;
+  -moz-transition: background-color 1000ms linear;
+  -o-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+}
+.navbar li{
+  padding-bottom: 6px;
+}
+.navbar  .navbar-right li{
+  padding-bottom: 2px;
+}
+.navbar .user{
+  margin-top: -2px;
+}
+.navbar .fa{
+  font-size: 23px;
+}
+

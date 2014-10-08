@@ -1,10 +1,11 @@
 (function() {
   define(['app', 'jquery', 'jquery_cookie', 'services/authentication'], function(app, $) {
-    return app.controller('UserCtrl', function($scope, $window, AuthenticationService, $http) {
+    return app.controller('UserCtrl', function($rootScope, $scope, $window, AuthenticationService, $http) {
       $scope.user = {
         username: "gnandou@gmail.com",
         password: "idegnandou"
       };
+      $rootScope.user = "MacBookPro";
       $scope.errormsg = "false";
       $scope.message = "";
       $scope.welcome = "";

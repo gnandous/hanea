@@ -18,6 +18,9 @@ User = new Schema
     require: true
   token:
     type: String
+  avatar:
+    type: String
+    defautl: 'avatar2'
 
 # Mongoose methods
 User.statics.generateToken = ->

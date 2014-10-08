@@ -4,10 +4,11 @@ define [
   'jquery_cookie'
   'services/authentication'
 ], (app, $)->
-  app.controller 'UserCtrl', ($scope, $window, AuthenticationService, $http)->
+  app.controller 'UserCtrl', ($rootScope, $scope, $window, AuthenticationService, $http)->
     $scope.user =
       username: "gnandou@gmail.com"
       password: "idegnandou"
+    $rootScope.user = "MacBookPro"
     $scope.errormsg = "false"
     $scope.message = ""
     $scope.welcome = ""
