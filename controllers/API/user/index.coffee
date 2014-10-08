@@ -4,4 +4,4 @@ module.exports =
   restricted: require './restricted'
   welcome: require './welcome'
   auth: require './auth'
-  headerinfo: require './headerinfo'
+  current: require './current'

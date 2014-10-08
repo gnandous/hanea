@@ -16,5 +16,5 @@ module.exports = () ->
   APIRouter.post '/signup', controllers.API.user.register
   APIRouter.post '/login', controllers.API.user.auth
   APIRouter.get '/secure/welcome', controllers.API.user.restricted
-  APIRouter.get '/secure/headerInfo', controllers.API.user.headerinfo.index
+  APIRouter.get '/secure/headerInfo', controllers.API.user.current.index
   APIRouter.get '*', requestInterceptor
