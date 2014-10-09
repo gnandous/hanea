@@ -69,18 +69,23 @@ video#bgvideo{
 #sidebar{
   color: white;
   text-align: center;
-  max-width: 300px;
-  padding: 30px 26px;
+  width: 220px;
+  top: 0px;
+  padding-top: 30px;
 }
-.avatar{
-  width: 94px;
-  height: 94px;
+.avatar-header{
+  border-radius: 100px;
+  padding: -1px -1px !important;
+  border:solid #C2C2CA 5px;
+  width: 121px;
+  height: 121px;
+  margin-top: 14px;
 }
 #main-content{
   /*margin-left: 370px;*/
 }
 .wrapper{
-  padding-left: 350px;
+  padding-left: 180px;
 }
 .navbar{
   background-color: #2B2E33;
@@ -115,4 +120,95 @@ video#bgvideo{
 .navbar .fa{
   font-size: 23px;
 }
+.user-info{
+  width: 100%;
+}
+.user-info h1{
+  font-size: 22px;
+}
+#page_profil_header{
+  width: 100%;
+  height: 255px;
+  position: relative;
+}
+#page_profil_header .headerblur{
+  background-image: url(/images/slide-1.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99.9%;
+  z-index: 0;
+  overflow: hidden;
+}
+.userheader{
+  width: 493px;
+  height: 142px;
+  position: absolute;
+  bottom: 0;
+  left: 260px;
+  margin: auto;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  color: white;
+}
+.userheader h1{
+  width: 200px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  padding-bottom: 10px;
+  border-bottom: solid #EEE 1px;
+}
+.navbar-form .form-control{
+  border: none;
+  color: #C2C2CA;
+  background-color: #52525A !important;
+  height: 28px;
+  width: 100%;
 
+}
+.userstatuts{
+  margin-left: 20px;
+}
+.navbar-form{
+  position: relative;
+}
+.navbar-form i{
+  color: #C2C2CA;
+  position: absolute;
+  top: 7px;
+  right: 27px;
+}
+.sidebar-nav{
+  color: #52525A;
+  text-align: left;
+  width: 100%;
+}
+.sidebar-nav li{
+  padding: 6px 17px;
+    -webkit-transition: background-color 200ms linear;
+  -moz-transition: background-color 200ms linear;
+  -o-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+}
+.sidebar-nav li:hover{
+  background-color: #000;
+  background:#373a41;
+  -webkit-transition: background-color 1000ms linear;
+  -moz-transition: background-color 1000ms linear;
+  -o-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+}
+.sidebar-nav li>a{
+  font-size: 15px;
+}
+
+
+body{
+  margin-top: 0px;
+}

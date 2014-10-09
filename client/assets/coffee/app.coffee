@@ -16,6 +16,10 @@ define [
       templateUrl: '../templates/dashboard.html'
       controller: "dashboard"
       controllerUrl: "controllers/dashboard"
+    ).when("/api/contenu", angularAMD.route
+      templateUrl: '../templates/contenus.html'
+      controller: "contenus"
+      controllerUrl: "controllers/contenus"
     ).otherwise redirectTo: "/api"
     $locationProvider.html5Mode(true)
 
