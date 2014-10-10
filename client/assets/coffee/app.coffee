@@ -1,12 +1,12 @@
 define [
-  'angularAMD',
-  'angular_route',
-  'services/interceptor',
+  'angularAMD'
+  'features/ressources'
+  'angular_route'
+  'services/interceptor'
   'directives/header'
   'directives/sidebarright'
-], (angularAMD, headerView)->
+], (angularAMD, _Ressources)->
   myApp = angular.module('myApp', ['ngRoute', 'Authorization'])
-
   myApp.config ($routeProvider, $locationProvider)->
     $routeProvider.when("/api/login", angularAMD.route
       templateUrl: "../templates/login.html"
@@ -16,6 +16,8 @@ define [
       templateUrl: '../templates/dashboard.html'
       controller: "dashboard"
       controllerUrl: "controllers/dashboard"
+      resolve:
+        Model: _Ressources.Model
     ).when("/api/contenu", angularAMD.route
       templateUrl: '../templates/contenus.html'
       controller: "contenus"

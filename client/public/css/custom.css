@@ -208,7 +208,10 @@ video#bgvideo{
   font-size: 15px;
 }
 
-
+.panel{
+  border-radius: 0px;
+}
 body{
   margin-top: 0px;
+  background-color: #EEEEEE;
 }
