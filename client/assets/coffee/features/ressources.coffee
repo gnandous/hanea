@@ -4,6 +4,6 @@ define [
   Model: ($http, $q)->
     defer = $q.defer()
     $http.get("/api/secure/currentuser").success((data, status)->
-      return data
+      defer.resolve(data)
     ).error (data, status)->
       defer.reject(data);
