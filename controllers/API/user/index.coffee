@@ -5,3 +5,4 @@ module.exports =
   welcome: require './welcome'
   auth: require './auth'
   current: require './current'
+  content: require './content'

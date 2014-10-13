@@ -18,4 +18,5 @@ module.exports = () ->
   APIRouter.post '/login', controllers.API.user.auth
   APIRouter.get '/secure/welcome', controllers.API.user.restricted
   APIRouter.get '/secure/currentuser', controllers.API.user.current.index
+  APIRouter.post '/secure/content', controllers.API.user.content.create
   APIRouter.get '*', requestInterceptor
