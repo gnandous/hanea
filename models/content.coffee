@@ -5,6 +5,7 @@ Content = new Schema
   creator:
     type: Schema.ObjectId
     ref: 'User'
+    required: true
   type:
     type: String
     required: true

@@ -20,6 +20,7 @@ define [
           $scope.message = "Welcome"
           cookieOptions =
             path: '/'
+            expires: 365
           $.cookie 'hanea_session', data._id, cookieOptions
           window.location = '/api/'
         ).error (data, status) ->

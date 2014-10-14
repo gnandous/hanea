@@ -17,7 +17,8 @@
             $scope.isAuthenticated = true;
             $scope.message = "Welcome";
             cookieOptions = {
-              path: '/'
+              path: '/',
+              expires: 365
             };
             $.cookie('hanea_session', data._id, cookieOptions);
             return window.location = '/api/';
