@@ -3,7 +3,7 @@
     return angularAMD.directive('sidebarright', function() {
       return {
         restrict: 'A',
-        templateUrl: "../templates/partials/sidebarright.html",
+        templateUrl: "/../templates/partials/sidebarright.html",
         controller: ['$scope', '$filter', function($scope, $filter) {}]
       };
     });

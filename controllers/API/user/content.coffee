@@ -1,7 +1,6 @@
 validator = require '../../../libs/validator'
 User = require '../../../models/user'
-config = require '../../../config/'
-bcrypt = require 'bcrypt'
+Content = require '../../../models/content'
 
 module.exports =
   create: (req, res, next)->

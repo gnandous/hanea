@@ -3,7 +3,7 @@
     return angularAMD.directive('contentmenu', function() {
       return {
         restrict: 'A',
-        templateUrl: "../templates/partials/contentmenu.html",
+        templateUrl: "/../templates/partials/contentmenu.html",
         controller: ['$scope', '$filter', function($scope, $filter) {}]
       };
     });

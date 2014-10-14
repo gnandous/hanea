@@ -3,7 +3,7 @@
     return angularAMD.directive('header', function() {
       return {
         restrict: 'A',
-        templateUrl: "../templates/partials/header.html",
+        templateUrl: "/../templates/partials/header.html",
         controller: ['$scope', '$filter', function($scope, $filter) {}]
       };
     });

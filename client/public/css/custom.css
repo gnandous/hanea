@@ -268,3 +268,10 @@ body{
 #main-content{
   background-color: #eee;
 }
+#addcontent strong{
+  font-size: 14px;
+}
+#addcontent textarea{
+  width: 100%;
+  min-height: 300px;
+}

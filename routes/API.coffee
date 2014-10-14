@@ -12,6 +12,7 @@ requestInterceptor = (req, res, next)->
 module.exports = () ->
   APIRouter.get '/', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/contenu', requestInterceptor, controllers.API.user.welcome
+  APIRouter.get '/contenu/add', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/login', controllers.API.user.welcome
   APIRouter.get '/signup', controllers.API.user.signup
   APIRouter.post '/signup', controllers.API.user.register
