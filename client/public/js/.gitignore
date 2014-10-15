@@ -1,6 +1,0 @@
-*.js
-!plugins/**/*.js
-!/controllers/*.js
-!login-validator/*.js
-!directives/*.js
-!services/*.js
