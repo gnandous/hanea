@@ -1,21 +1,15 @@
 <div class="media-section">
   <div class="front-bg">
-    <video id="bgvideo" autoplay poster="/video/preview.jpg">
+    <video id="bgvideo" autoplay poster="">
     </video>
   </div>
   <div class='container'>
     <div class="apilogin">
       <div class="row">
-        <div class="col-md-6">
-          <div class="apiwelcome">
-            <h1>Welcome On Hanea Api</h1>
-            <p>Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="signform">
+        <div class="col-md-7">
+          <div class="loginform">
             <div class="login-logo">
-              <a href="#?login-theme-3"></a>
+              <h1>Admin Hanea</h1>
             </div>
             <div class="login-form">
               <div class="alert alert-danger" ng-show="errormsg">
@@ -27,7 +21,7 @@
                 <input type="text" ng-model='user.username' placeholder="Username" class="input-field form-control user" />
                 <input type="password" ng-model='user.password'placeholder="Password" class="input-field form-control password" />
                 <button id="submit-form" class="btn bg-green ladda-button" data-style="expand-left">
-                  <span class="ladda-label">login</span>
+                <span class="ladda-label">login</span>
                 </button>
               </form>
               <div class="login-links">
@@ -45,8 +39,3 @@
     </div>
   </div>
 </div>
-<!--
-<video id="bgvideo" autoplay poster="/video/preview.jpg">
-  <source src="/video/preview.mp4" type="video/mp4">
-</video>
--->

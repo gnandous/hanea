@@ -3,7 +3,7 @@ define [
   'jquery'
   'jquery_cookie'
   'services/authentication'
-], (app, $)->
+], (app, $, foggy)->
   app.controller 'UserCtrl', ($rootScope, $scope, $window, AuthenticationService, $http)->
     $scope.user =
       username: "gnandou@gmail.com"

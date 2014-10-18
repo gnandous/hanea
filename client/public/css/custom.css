@@ -24,15 +24,25 @@ video#bgvideo{
   min-height: 100%;
   width: auto;
   height: auto;
-  background: url('/video/preview.jpg') no-repeat;
+  /*background: url('/video/preview.jpg') no-repeat;*/
+  background: url('/images/slide-2.jpg') no-repeat;
+  background-position: center bottom;
   background-size: cover;
 }
 .apilogin{
   position: absolute;
-  width: 1000px;
+  width: 50%;
   top: 20%;
-  left: 22%;
+  left: 35%;
   height: 410px;
+}
+.apilogin h1{
+  width: 70%;
+  margin: 14px 60px;
+  padding-bottom: 10px;
+  color: white;
+  border-color: white;
+  border-bottom: solid 1px;
 }
 .apiwelcome{
   color: #FFFFFF;
@@ -58,7 +68,12 @@ video#bgvideo{
 .signform a{
   color: #333;
 }
-
+.loginform{
+  margin: auto;
+}
+.loginform #submit-form{
+  width: 70%;
+}
 #haneavideo{
   position: fixed;
   top:0;
@@ -139,8 +154,8 @@ video#bgvideo{
   position: relative;
 }
 #page_profil_header .headerblur{
-  background-image: url(/images/slide-1.jpg);
-  background-position: center center;
+  background-image: url(/images/slide-3.jpg);
+  background-position: right bottom;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;

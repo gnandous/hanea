@@ -7,13 +7,14 @@ require.config
     ngload: 'plugins/ngload'
     jquery: 'plugins/jquery/jquery.min'
     jquery_cookie: 'plugins/jquery/jquery.cookie.min'
-    carousel: '../libs/owl/owl-carousel/owl.carousel'
     underscore: 'plugins/underscore/underscore'
     text: 'plugins/require/text.min'
 
   shim:
     jquery:
       exports: '$'
+    foggy:
+      deps: ['jquery']
     jquery_cookie: ['jquery']
     angularAMD: ['angular']
     angular_route: ['angular']

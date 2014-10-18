@@ -1,5 +1,5 @@
 (function() {
-  define(['app', 'jquery', 'jquery_cookie', 'services/authentication'], function(app, $) {
+  define(['app', 'jquery', 'jquery_cookie', 'services/authentication'], function(app, $, foggy) {
     return app.controller('UserCtrl', function($rootScope, $scope, $window, AuthenticationService, $http) {
       $scope.user = {
         username: "gnandou@gmail.com",
