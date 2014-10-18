@@ -67,11 +67,18 @@ video#bgvideo{
   left: 0;
 }
 #sidebar{
-  color: white;
+  color: #D2D2DA;
   text-align: center;
   width: 220px;
   top: 0px;
   padding-top: 30px;
+}
+#sidebar .divider{
+  margin-bottom: 4px;
+  margin-top: 4px;
+  height: 1px;
+  background-color: #666;
+  margin: 8px 12px;
 }
 .avatar-header{
   border-radius: 100px;
@@ -166,8 +173,8 @@ video#bgvideo{
 }
 .navbar-form .form-control{
   border: none;
-  color: #C2C2CA;
-  background-color: #52525A !important;
+  color: #000;
+  background-color: #D2D2DA !important;
   height: 28px;
   width: 100%;
 
@@ -179,15 +186,26 @@ video#bgvideo{
   position: relative;
 }
 .navbar-form i{
-  color: #C2C2CA;
+  color: #42424A;
   position: absolute;
-  top: 7px;
-  right: 27px;
+  top: 4px;
+  right: 25px;
+  font-size: 19px;
 }
 .sidebar-nav{
   color: #52525A;
   text-align: left;
   width: 100%;
+}
+.sidebar-nav .flaticon-settings21{
+  font-size: 20px !important;
+  padding: 0px 0px;
+  position: absolute;
+  right: 18px;
+  top: 8px;
+}
+.sidebar-nav .flaticon-settings21:hover{
+  color: #D2D2DA;
 }
 .sidebar-nav li{
   padding: 6px 17px;
@@ -206,6 +224,9 @@ video#bgvideo{
 }
 .sidebar-nav li>a{
   font-size: 15px;
+}
+.sn2{
+  border-top: solid #D2D2DA 1px;
 }
 
 .panel{
@@ -249,9 +270,17 @@ body{
   height: 150px;
 
 }
+
 .content-type a{
-  color: #333;
+  font-weight: bold;
+  font-size: 12px;
+  color: #32323A;
   text-decoration: none;
+}
+
+.content-type .btn-default{
+  background-color: #eee !important;
+  border-color: #d4d4d4;
 }
 .content-type button{
 
@@ -279,3 +308,21 @@ body{
   width: 100%;
   min-height: 300px;
 }
+#addcontent button{
+  background-color: white;
+  color: #c00;
+  border: solid #c00 1px;
+  border-radius: none !important;
+  border-radius: 0px;
+  width: 100%;
+   -webkit-transition: background-color 100ms linear;
+  -moz-transition: background-color 100ms linear;
+  -o-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+}
+#addcontent button:hover{
+  border-color: #1990DB;
+  background-color: #1990DB;
+  color: white;
+}
+
