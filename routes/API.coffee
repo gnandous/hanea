@@ -9,6 +9,10 @@ requestInterceptor = (req, res, next)->
     return res.render 'website/404',
       title: config.site.title
   next()
+badRequest = (req, res, next)->
+  return res.render 'website/404',
+    title: config.site.title
+  next()
 module.exports = () ->
   APIRouter.get '/', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/contenu', requestInterceptor, controllers.API.user.welcome
@@ -20,4 +24,5 @@ module.exports = () ->
   APIRouter.get '/secure/welcome', controllers.API.user.restricted
   APIRouter.get '/secure/currentuser', controllers.API.user.current.index
   APIRouter.post '/secure/content', controllers.API.user.content.create
-  APIRouter.get '*', requestInterceptor
+  APIRouter.get '*', badRequest
+  return APIRouter
