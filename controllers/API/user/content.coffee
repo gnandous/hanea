@@ -26,9 +26,22 @@ module.exports =
         field: 'published'
         error: 'Published must be filled'
     return res.status(400).send(errors) if errors.length
+    content = new Content
+      creator: req.user.id
+      type: "section-content"
+      location: req.body.location
+      published: req.body.published
+      title: req.body.title
+      subtitle: req.body.subtitle
+      content: req.body.content
+    content.save (err, content)->
+      return res.status(400).send(err) if err
+    return res.status(200).send(content)
 
   read: (req, res, next)->
     console.log ("read")
+  detail: (req, res, next)->
+    console.log("detail")
   update: (req, res, next)->
     console.log ("update")
   delete: (req, res, next)->
