@@ -19,6 +19,6 @@ loadUserFromEmail = ()->
         return res.status(401).send(err)
 
 module.exports = (app) ->
-  app.use '/api/secure/', loadUserFromEmail(), require('./API')()
+  app.use '/api/secure/', loadUserFromEmail()
   app.use '/api', require('./API')()
   app.use '/', require('./website')()

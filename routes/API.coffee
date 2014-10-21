@@ -24,5 +24,5 @@ module.exports = () ->
   APIRouter.get '/secure/welcome', controllers.API.user.restricted
   APIRouter.get '/secure/currentuser', controllers.API.user.current.index
   APIRouter.post '/secure/content', controllers.API.user.content.create
-  APIRouter.get '*', badRequest
+  APIRouter.get '/*', badRequest
   return APIRouter
