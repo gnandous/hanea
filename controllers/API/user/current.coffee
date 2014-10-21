@@ -4,6 +4,7 @@ User = require '../../../models/user'
 checkifUser = (req, res, next)->
   unless req.user
     return res.status(400).send("Unknown user")
+
 module.exports =
   index: (req, res, next) ->
     checkifUser
