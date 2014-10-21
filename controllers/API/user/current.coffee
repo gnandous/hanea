@@ -3,6 +3,8 @@ User = require '../../../models/user'
 
 module.exports =
   index: (req, res, next) ->
+    unless req.user
+      return res.status(400).send("non")
     User.findOne
       email: req.user.email
     , (err, user)->
