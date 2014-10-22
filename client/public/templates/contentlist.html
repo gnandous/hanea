@@ -28,8 +28,17 @@
             </a>
           </td>
           <td><strong>Contenu Basic</strong></td>
-          <td>{{content.published}}</td>
-          <td>{{content.location}}</td>
+          <td>
+            <span ng-if="content.published === true">
+              <i class="fa fa-check"></i>
+            </span>
+            <span ng-if="content.published === false">
+              <i class="fa fa-times"></i>
+            </span>
+          </td>
+          <td>
+            {{content.location}}
+          </td>
           <td>{{content.date}}</td>
           <td>
             <a href="#">
