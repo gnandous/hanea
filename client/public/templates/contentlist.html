@@ -5,7 +5,6 @@
   <div contentmenu></div>
   <div class='listtable'>
     <header ng-repeat='content in contents'>
-      {{content.title}} haha {{content.date}}
     </header>
     <table class="table">
       <thead>
@@ -20,67 +19,28 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="rowcolor">
-          <td>Column content</td>
-          <td><a href="#" class="">
-            <img src="/images/avatar2.png" alt="user avatar" width="30" class="p-r-5">
-            <span class="username">Souleymane</span>
-          </a></td>
-          <td>Column content</td>
-          <td><i class="fa fa-check"></i></td>
-          <td>Section 1</td>
-          <td>21/12/07</td>
+        <tr class='rowcolor' ng-repeat='content in contents'>
+          <td><strong>{{content.title}}</strong></td>
+          <td>
+            <a href="#" class="">
+              <img src="/images/avatar2.png" alt="user avatar" width="30" class="p-r-5">
+              <span class="username">{{content.creator.name}}</span>
+            </a>
+          </td>
+          <td><strong>Contenu Basic</strong></td>
+          <td>{{content.published}}</td>
+          <td>{{content.location}}</td>
+          <td>{{content.date}}</td>
           <td>
             <a href="#">
-              <i class="glyph-icon flaticon-advanced"></i></a><a href="#"><i class="fa fa-trash fa-trash-o trsh-icon"></i></a>
-            </td>
-          </tr>
-          <tr class="rowcolor">
-            <td>Colimn content</td>
-            <td><a href="#" class="">
-              <img src="/images/avatar2.png" alt="user avatar" width="30" class="p-r-5">
-              <span class="username">Souleymane</span>
-            </a></td>
-            <td>Column content</td>
-            <td><i class="fa fa-check"></i></td>
-            <td>Section 1</td>
-            <td>21/12/07</td>
-            <td>
-              <a href="#">
-                <i class="glyph-icon flaticon-advanced"></i></a><a href="#"><i class="fa fa-trash fa-trash-o trsh-icon"></i></a>
-              </td>
-            </tr>
-            <tr class="rowcolor">
-              <td>Column content</td>
-              <td><a href="#" class="">
-                <img src="/images/avatar2.png" alt="user avatar" width="30" class="p-r-5">
-                <span class="username">Souleymane</span>
-              </a></td>
-              <td><strong>Column content</strong></td>
-              <td><i class="fa fa-check"></i></td>
-              <td>Section 1</td>
-              <td>21/12/07</td>
-              <td>
-                <a href="#">
-                  <i class="glyph-icon flaticon-advanced"></i></a><a href="#"><i class="fa fa-trash fa-trash-o trsh-icon"></i></a>
-                </td>
-              </tr>
-              <tr class="rowcolor">
-                <td>Column content</td>
-                <td><a href="#" class="">
-                  <img src="/images/avatar2.png" alt="user avatar" width="30" class="p-r-5">
-                  <span class="username">Souleymane</span>
-                </a></td>
-                <td>Column content</td>
-                <td><i class="fa fa-check"></i></td>
-                <td>Section 1</td>
-                <td>21/12/07</td>
-                <td>
-                  <a href="#">
-                    <i class="glyph-icon flaticon-advanced"></i></a><a href="#"><i class="fa fa-trash fa-trash-o trsh-icon"></i></a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+              <i class="glyph-icon flaticon-advanced"></i>
+            </a>
+            <a href="#">
+              <i class="fa fa-trash fa-trash-o trsh-icon"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
