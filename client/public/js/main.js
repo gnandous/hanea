@@ -8,6 +8,7 @@
       ngload: 'plugins/ngload',
       jquery: 'plugins/jquery/jquery.min',
       jquery_cookie: 'plugins/jquery/jquery.cookie.min',
+      scrollTo: 'plugins/jquery/jquery-scrollto',
       underscore: 'plugins/underscore/underscore',
       text: 'plugins/require/text.min'
     },

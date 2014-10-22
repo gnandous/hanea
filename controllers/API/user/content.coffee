@@ -39,7 +39,12 @@ module.exports =
     return res.status(200).send(content)
 
   read: (req, res, next)->
-    console.log ("read")
+    Content.find()
+    .populate("creator")
+    .exec (err, contents)->
+      unless contents
+        return res.status(400).send(err)
+      return res.status(200).send(contents)
   detail: (req, res, next)->
     console.log("detail")
   update: (req, res, next)->

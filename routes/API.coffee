@@ -17,12 +17,14 @@ module.exports = () ->
   APIRouter.get '/', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/contenu', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/contenu/add', requestInterceptor, controllers.API.user.welcome
+  APIRouter.get '/contenu/all', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/login', controllers.API.user.welcome
   APIRouter.get '/signup', controllers.API.user.signup
   APIRouter.post '/signup', controllers.API.user.register
   APIRouter.post '/login', controllers.API.user.auth
   APIRouter.get '/secure/welcome', controllers.API.user.restricted
   APIRouter.get '/secure/currentuser', controllers.API.user.current.index
+  APIRouter.get '/secure/content/all', controllers.API.user.content.read
   APIRouter.post '/secure/content', controllers.API.user.content.create
   APIRouter.get '/*', badRequest
   return APIRouter

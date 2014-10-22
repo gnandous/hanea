@@ -26,6 +26,12 @@ define [
       templateUrl: '/../templates/addcontent.html'
       controller: "contenus"
       controllerUrl: "controllers/contenus"
+    ).when("/api/contenu/all", angularAMD.route
+      templateUrl: '/../templates/contentlist.html'
+      controller: "contentlist"
+      controllerUrl: "controllers/contentlist"
+      resolve:
+        listOfContents: _Ressources.listOfContents
     ).otherwise redirectTo: "/api"
     $locationProvider.html5Mode(true)
 

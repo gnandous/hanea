@@ -340,4 +340,42 @@ body{
   background-color: #1990DB;
   color: white;
 }
-
+.listtable{
+  margin-top: 70px;
+  margin-left: 40px;
+}
+.table>thead>tr>th{
+  border-bottom: none;
+}
+.listtable thead{
+  background-color: #d4d4d4;
+  border-bottom: none;
+}
+.listtable thead th{
+  color: #333;
+}
+.listtable i{
+  font-size: 17px;
+  margin-left: 10px;
+}
+.listtable a{
+  color: #333;
+}
+.listtable .fa-check{
+  color: #333;
+}
+/* table style */
+.listtable .rowcolor{
+  background-color: white;
+}
+.tablesearch{
+  width: 100px;
+  height: 30px;
+  background-color: white;
+}
+.message .alert{
+  display: none;
+}
+.message .alert a{
+  color: inherit;
+}

@@ -2,6 +2,9 @@ mongoose = require 'mongoose'
 Schema = mongoose.Schema
 
 Content = new Schema
+  date:
+    type: Date
+    default: Date.now
   creator:
     type: Schema.ObjectId
     ref: 'User'

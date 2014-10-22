@@ -29,7 +29,11 @@
             published: $scope.inputs.publication.is(':checked')
           },
           success: function(data) {
-            return console.log(data);
+            $(".message .alert").html("<i class='fa fa-check'></i> Your post has been added succesfully. Thank You. <strong> <a href='/api/contenu/all'>See content</a></strong>");
+            $(".message .alert").fadeIn();
+            return $('html, body').animate({
+              scrollTop: 0
+            }, 300);
           },
           error: (function(_this) {
             return function(jqXHR, textStatus, errorThrown) {
@@ -39,6 +43,11 @@
                   errors = jqXHR.responseJSON;
                   if (_.isArray(errors)) {
                     return _.each(errors, function(error, key, list) {
+                      if (!key) {
+                        $('html, body').animate({
+                          scrollTop: _this.inputs[error.field].offset().top - 30
+                        }, 500);
+                      }
                       return _this.inputs[error.field].addClass('parsley-error');
                     });
                   }

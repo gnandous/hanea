@@ -29,11 +29,19 @@ define [
           content : $scope.inputs.content.val()
           published : $scope.inputs.publication.is(':checked')
         success: (data)->
-          console.log data
+          $(".message .alert").html("<i class='fa fa-check'></i> Your post has been added succesfully. Thank You. <strong> <a href='/api/contenu/all'>See content</a></strong>")
+          $(".message .alert").fadeIn()
+          $('html, body').animate(
+            scrollTop: 0
+          , 300)
         error: (jqXHR, textStatus, errorThrown)=>
           switch jqXHR.status
             when 400
               errors = jqXHR.responseJSON
               if _.isArray errors
                 _.each errors, (error, key, list)=>
+                  unless key
+                    $('html, body').animate(
+                      scrollTop: @inputs[error.field].offset().top - 30
+                    , 500)
                   @inputs[error.field].addClass('parsley-error')
