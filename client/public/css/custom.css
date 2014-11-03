@@ -316,6 +316,8 @@ body{
 #main-content{
   background-color: #eee;
 }
+/*** text angular custom **/
+
 #addcontent strong{
   font-size: 14px;
 }
@@ -323,7 +325,7 @@ body{
   width: 100%;
   min-height: 300px;
 }
-#addcontent button{
+#addcontent .contentsubmit{
   background-color: white;
   color: #c00;
   border: solid #c00 1px;
@@ -335,13 +337,48 @@ body{
   -o-transition: background-color 100ms linear;
   -ms-transition: background-color 100ms linear;
 }
-#addcontent button:hover{
+#addcontent .btn-default{
+  background-color: white;
+  font-size: 12px;
+}
+/*** editor wisiwing styling angular **/
+#addcontent .ta-editor{
+  min-height: 300px;
+}
+.ta-editor{
+  border-radius: 0px;
+}
+.ta-toolbar{
+  margin-left: 0px;
+  border:solid 1px #d3d3d3;
+  margin-bottom: -1px;
+}
+.ta-toolbar .active{
+  background-color: #55acee!important;
+  color: white !important;
+}
+.ta-toolbar button{
+  border:none;
+  border-radius: 0px;
+}
+.ta-toolbar button:nth-child(1){
+
+}
+
+/*** end of editor wisiwing styling angular **/
+#addcontent .btn-group{
+  margin-left: 0px;
+}
+#addcontent .btn-group:nth-child(1){
+  margin-left: 5px;
+}
+#addcontent .contentsubmit:hover{
   border-color: #1990DB;
   background-color: #1990DB;
   color: white;
 }
 .listtable{
-  margin-top: 70px;
+  margin-top: 34px;
   margin-left: 40px;
 }
 .table>thead>tr>th{
@@ -357,6 +394,7 @@ body{
 .listtable i{
   font-size: 17px;
   margin-left: 10px;
+  cursor: pointer;
 }
 .listtable a{
   color: #333;
@@ -368,6 +406,15 @@ body{
 .listtable .rowcolor{
   background-color: white;
 }
+.listtable .tableleft{
+  padding-left: 25px;
+  font-size: 13px;
+}
+/*
+.listtable td{
+  max-width: 280px;
+}
+*/
 .tablesearch{
   width: 100px;
   height: 30px;
@@ -378,4 +425,29 @@ body{
 }
 .message .alert a{
   color: inherit;
+}
+.tablesearch{
+  position: relative;
+  padding: 0px 0px;
+  width: 70%;
+  height: 48px;
+  margin: auto;
+  margin-top: 30px;
+}
+.tablesearch .form-control{
+  height: 100%;
+  border: none;
+  font-size: 20px;
+}
+.tablesearch .fa-search{
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  font-size: 22px;
+}
+.editcontent .form-control{
+  background-color: #eee !important;
+}
+.editcontent .parsley-error{
+  background-color: #F2DEDE !important;
 }

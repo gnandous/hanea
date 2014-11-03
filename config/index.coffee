@@ -1,6 +1,8 @@
 config =
   session: require "./session"
   databases: require "./databases"
+  success: require "./success"
+  errors: require "./errors"
   server: require "./server"
   secret: "this is the secret secret secret 12356"
   mail:

@@ -1,13 +1,16 @@
 (function() {
-  define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _) {
+  define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _, tinymce, jqtinymce) {
     return app.controller("contenus", function($scope, $window, $http) {
+      $scope.content = "<h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p>";
+      $scope.disabled = false;
       $scope.inputs = {
         location: $("#addcontent").find("#location"),
         title: $("#addcontent").find("#title"),
         subtitle: $("#addcontent").find("#subtitle"),
-        content: $("#addcontent").find("#content"),
+        content: $("#addcontent").find("#content").find('.form-control'),
         publication: $("#addcontent").find("#published")
       };
+      $scope.init = function() {};
       $scope.change = function(event) {
         if ($(document.activeElement).val()) {
           $(document.activeElement).removeClass('parsley-error');
@@ -17,7 +20,8 @@
           return false;
         }
       };
-      return $scope.login = function() {
+      $scope.create = function() {
+        console.log($("form").serialize());
         return $.ajax({
           url: '/api/secure/content',
           type: 'POST',
@@ -25,7 +29,7 @@
             location: $scope.inputs.location.val(),
             title: $scope.inputs.title.val(),
             subtitle: $scope.inputs.subtitle.val(),
-            content: $scope.inputs.content.val(),
+            content: $scope.content,
             published: $scope.inputs.publication.is(':checked')
           },
           success: function(data) {
@@ -56,6 +60,7 @@
           })(this)
         });
       };
+      return $scope.init();
     });
   });
 

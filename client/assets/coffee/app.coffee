@@ -2,11 +2,13 @@ define [
   'angularAMD'
   'features/ressources'
   'angular_route'
+  'angular_sanitize'
+  'textangular'
   'services/interceptor'
   'directives/header'
   'directives/sidebarright'
 ], (angularAMD, _Ressources)->
-  myApp = angular.module('myApp', ['ngRoute', 'Authorization'])
+  myApp = angular.module('myApp', ['ngRoute', 'Authorization', 'textAngular'])
   myApp.config ($routeProvider, $locationProvider)->
     $routeProvider.when("/api/login", angularAMD.route
       templateUrl: "/../templates/login.html"
@@ -32,6 +34,10 @@ define [
       controllerUrl: "controllers/contentlist"
       resolve:
         listOfContents: _Ressources.listOfContents
+    ).when("/api/contenu/edit/:id", angularAMD.route
+      templateUrl: '/../templates/contentedit.html'
+      controller: "contentedit"
+      controllerUrl: "controllers/contentedit"
     ).otherwise redirectTo: "/api"
     $locationProvider.html5Mode(true)
 

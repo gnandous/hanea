@@ -8,11 +8,6 @@
       <div class='row'>
         <div class='col-md-8 col-sm-offset-0'>
           <div class='panel'>
-            <!--
-            <div class='panel-heading'>
-              <h1>Basic content type</h1>
-            </div>
-            -->
             <div class='panel-body'>
               <div id='message-stat' class='message'>
                 <div class="alert alert-success" role="alert">
@@ -55,7 +50,10 @@
                     <label class="form-label">Content </label><span class="asterisk">*</span>
                     <span class="tips">Set the content of your post</span>
                     <div class="controls">
-                      <textarea ng-change='change()' ng-model='content' id="content" class='note-codable' name="content"></textarea>
+                      <text-angular ta-toolbar="[['h1','h2','h3'],['bold','italics'], ['justifyLeft','justifyCenter','justifyRight', 'ul', 'ol']]" class='ta-editor' id="content"  ng-model="content"></text-angular>
+                      <!--
+                      <textarea ng-change='change()' ng-model='content' id="content" class='form-control' name="content"></textarea>
+                      -->
                     </div>
                   </div>
                 </fieldset>
@@ -69,7 +67,7 @@
                   </div>
                 </fieldset>
                 <div class="form-group">
-                  <button ng-click="login()" class="btn btn-primary contentsubmit">Enregistrer</button>
+                  <button ng-click="create()" class="btn btn-primary contentsubmit">Enregistrer</button>
                 </div>
               </form>
             </div>
@@ -79,7 +77,6 @@
         <div class='col-md-4'>
           <div class='panel'>
             <div class='panel-heading'>
-              <strong>last content type:</strong>
             </div>
             <div class='panel-body'>
             </div>
