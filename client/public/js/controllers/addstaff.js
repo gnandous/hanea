@@ -11,6 +11,7 @@
         return s3upload = new S3Upload({
           file_dom_selector: "files",
           s3_sign_put_url: "/api/secure/sign_s3",
+          s3_object_name: "user01-img",
           onProgress: function(percent, message) {
             status_elem.innerHTML = "Upload progress: " + percent + "% " + message;
           },
