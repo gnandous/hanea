@@ -15,7 +15,6 @@ define [
     $scope.init = ()->
       $http.get("/api/secure/content/detail/#{$routeParams.id}").success((data, status, headers, config) ->
         $scope.model = data
-
       ).error (data, status, headers, config) ->
         console.log status
     $scope.change = (event)->

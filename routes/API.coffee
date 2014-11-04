@@ -19,11 +19,13 @@ module.exports = () ->
   APIRouter.get '/contenu/add', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/contenu/all', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/contenu/edit/:id', requestInterceptor, controllers.API.user.welcome
+  APIRouter.get '/staff/add', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/login', controllers.API.user.welcome
   APIRouter.get '/signup', controllers.API.user.signup
   APIRouter.post '/signup', controllers.API.user.register
   APIRouter.post '/login', controllers.API.user.auth
   APIRouter.get '/secure/welcome', controllers.API.user.restricted
+  APIRouter.get '/secure/sign_s3', controllers.API.user.staff.mys3
   APIRouter.get '/secure/currentuser', controllers.API.user.current.index
   APIRouter.get '/secure/content/all', controllers.API.user.content.read
   APIRouter.post '/secure/content', controllers.API.user.content.create

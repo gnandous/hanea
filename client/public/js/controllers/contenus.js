@@ -21,7 +21,6 @@
         }
       };
       $scope.create = function() {
-        console.log($("form").serialize());
         return $.ajax({
           url: '/api/secure/content',
           type: 'POST',

@@ -6,3 +6,4 @@ module.exports =
   auth: require './auth'
   current: require './current'
   content: require './content'
+  staff: require './staff'

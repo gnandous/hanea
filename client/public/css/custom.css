@@ -451,3 +451,11 @@ body{
 .editcontent .parsley-error{
   background-color: #F2DEDE !important;
 }
+/***** heroku s3 ***/
+
+.s3file{
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-bottom: 40px;
+
+}

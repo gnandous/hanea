@@ -38,6 +38,10 @@ define [
       templateUrl: '/../templates/contentedit.html'
       controller: "contentedit"
       controllerUrl: "controllers/contentedit"
+    ).when("/api/staff/add", angularAMD.route
+      templateUrl: '/../templates/addstaff.html'
+      controller: "addstaff"
+      controllerUrl: "controllers/addstaff"
     ).otherwise redirectTo: "/api"
     $locationProvider.html5Mode(true)
 
