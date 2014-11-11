@@ -20,7 +20,7 @@ User = new Schema
     type: String
   avatar:
     type: String
-    defautl: 'avatar2'
+    default: 'avatar2'
 
 # Mongoose methods
 User.statics.generateToken = ->

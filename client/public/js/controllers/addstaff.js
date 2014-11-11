@@ -2,11 +2,18 @@
   define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _) {
     return app.controller("addstaff", function($scope, $window, $http, $routeParams) {
       var s3_upload;
-      console.log("add staff controller ...");
+      $scope.change = function(event) {
+        if ($(document.activeElement).val()) {
+          $(document.activeElement).removeClass('parsley-error');
+          return true;
+        } else {
+          $(document.activeElement).addClass('parsley-error');
+          return false;
+        }
+      };
       s3_upload = function() {
-        var preview_elem, s3upload, status_elem, url_elem;
+        var preview_elem, s3upload, status_elem;
         status_elem = document.getElementById("status");
-        url_elem = document.getElementById("avatar_url");
         preview_elem = document.getElementById("preview");
         return s3upload = new S3Upload({
           file_dom_selector: "files",
@@ -14,12 +21,17 @@
           s3_object_name: "user01-img",
           onProgress: function(percent, message) {
             status_elem.innerHTML = "Upload progress: " + percent + "% " + message;
+            $(".progress").css('display', 'block');
+            $("div[role='progressbar']").css('width', "" + percent + "%");
           },
-          onFinishS3Put: function(public_url) {
-            status_elem.innerHTML = "Upload completed. Uploaded to: " + public_url;
-            url_elem.value = public_url;
-            preview_elem.innerHTML = "<img src=\"" + public_url + "\" style=\"width:300px;\" />";
-          },
+          onFinishS3Put: (function(_this) {
+            return function(public_url) {
+              var img;
+              status_elem.innerHTML = "Upload completed. Uploaded to: " + public_url;
+              img = "<img src='" + public_url + "' width='150' height='150' id='avatar_preview' />";
+              $("#preview").html(img);
+            };
+          })(this),
           onError: function(status) {
             status_elem.innerHTML = "Upload error: " + status;
           }

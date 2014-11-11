@@ -7,15 +7,63 @@
     <div id='main-content'>
       <div class='panel'>
         <div class='panel-body'>
-          <input type="file" id="files"/>
-          <p id="status">Please select a file</p>
-          <div style="border:1px solid gray;width:300px;"  id="preview"><img src="/images/slide-2.jpg" style="width:300px;" /></div>
-          <form method="POST" action="/submit_form/">
-            <input type="hidden" id="avatar_url" name="avatar_url" value="/images/slide-2.jpg" />
-            <input type="text" name="username" placeholder="Username" /><br />
-            <input type="text" name="full_name" placeholder="Full name" /><br /><br />
-            <input type="submit" value="Update profile" />
-          </form>
+          <strong style='display:block;margin:3px 6px;'>Avatar picture</strong>
+          <div class='profil-image-controls'>
+            <div class='imagelocation'>
+              <div  id="preview">
+                <img class="avatar size73" width='150' height='150' id="avatar_preview" src="https://pbs.twimg.com/profile_images/459636178086416384/XukPIUJW_bigger.jpeg">
+              </div>
+            </div>
+            <input type='file' id='files' class='validateimagestaff'>
+            <div id="status">Please select a file</div>
+            <div class="progress" style='display:none;'>
+              <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+              </div>
+            </div>
+          </div>
+          <div class='row'>
+            <div class='col-md-7'>
+              <form id='addcontent' class="form-horizontal addstaff">
+                <fieldset>
+                  <legend><strong>Relative informations</strong></legend>
+                  <input type="hidden" id="avatar_url" name="avatar_url" value="" />
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Nom<span class="asterisk">*</span>
+                    </label>
+                    <div class="col-sm-9">
+                      <input type="text" ng-change='change()' ng-model='nom' data-parsley-minlength="3" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Prenom <span class="asterisk">*</span>
+                    </label>
+                    <div class="col-sm-9">
+                      <input type="text" ng-change='change()' ng-model='prenom' data-parsley-minlength="3" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Rôle<span class="asterisk">*</span>
+                    </label>
+                    <div class="col-sm-9">
+                      <input type="text" ng-change='change()' ng-model='role' data-parsley-minlength="3" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Bio<span class="asterisk">*</span>
+                    </label>
+                    <div class="col-sm-9">
+                      <textarea rows="5" ng-change='change()' ng-model='bio' class="form-control valid bio" nplaceholder="Write your comment... (minimum 30 characters)"></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class='col-sm-9 col-sm-offset-3'>
+                  <div class="form-group">
+                    <button ng-click="" class="contentsubmit">Enregistrer</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>

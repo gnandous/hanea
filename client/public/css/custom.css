@@ -459,3 +459,82 @@ body{
   padding-bottom: 40px;
 
 }
+
+/****** file upload styling staff *****/
+.profil-image-controls{
+  position: relative;
+  min-height: 200px;
+}
+.profil-image-controls .imagelocation,
+.profil-image-controls input
+{
+  position: absolute;
+}
+.profil-image-controls .imagelocation{
+  left: 22px;
+  top: 12px;
+}
+.profil-image-controls input{
+  left: 200px;
+  top: 12px;
+}
+.profil-image-controls #status{
+  display: block;
+  position: absolute;
+  left: 200px;
+  top: 50px;
+
+
+}
+.profil-image-controls input[type=file]{
+  color: transparent;
+}
+.profil-image-controls .validateimagestaff::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.profil-image-controls .validateimagestaff::-webkit-file-upload-text {
+  visibility: hidden;
+}
+.profil-image-controls .validateimagestaff::-moz-file-upload-button {
+  visibility: hidden;
+}
+.profil-image-controls .validateimagestaff::-moz-file-upload-text {
+  visibility: hidden;
+}
+.profil-image-controls .validateimagestaff::before{
+ content: 'Select some files';
+  display: inline-block;
+  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-size: 10pt;
+  color: #333;
+
+
+}
+.profil-image-controls .validateimagestaff:hover::before {
+}
+.profil-image-controls .progress{
+  width: 200px;
+  position: absolute;
+  left: 19px;
+  top: 176px;
+  border-radius: 20px;
+  height: 8px;
+
+}
+.profil-image-controls .validateimagestaff:active::before {
+  background-color: #d4d4d4;
+}
+.addstaff .contentsubmit{
+  height: 30px;
+  width: 100%;
+}
+.addstaff .bio{
+  min-height: 100px !important;
+}

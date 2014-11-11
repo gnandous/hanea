@@ -1,5 +1,6 @@
 aws = require 'aws-sdk'
 config = require '../../../config'
+Staff = require '../../../models/staff'
 
 module.exports =
   create: (req, res, next)->

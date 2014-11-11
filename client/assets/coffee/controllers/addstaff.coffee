@@ -5,10 +5,16 @@ define [
   'directives/contentmenu'
 ], (app, $, _)->
   app.controller "addstaff", ($scope, $window, $http, $routeParams)->
-    console.log ("add staff controller ...")
+
+    $scope.change = (event)->
+      if $(document.activeElement).val()
+        $(document.activeElement).removeClass('parsley-error')
+        return true
+      else
+        $(document.activeElement).addClass('parsley-error')
+        return false
     s3_upload = () ->
       status_elem = document.getElementById("status")
-      url_elem = document.getElementById("avatar_url")
       preview_elem = document.getElementById("preview")
       s3upload = new S3Upload
         file_dom_selector: "files"
@@ -16,12 +22,14 @@ define [
         s3_object_name: "user01-img"
         onProgress: (percent, message) ->
           status_elem.innerHTML = "Upload progress: " + percent + "% " + message
+          $(".progress").css('display', 'block');
+          $("div[role='progressbar']").css('width', "#{percent}%")
           return
 
-        onFinishS3Put: (public_url) ->
+        onFinishS3Put: (public_url) =>
           status_elem.innerHTML = "Upload completed. Uploaded to: " + public_url
-          url_elem.value = public_url
-          preview_elem.innerHTML = "<img src=\"" + public_url + "\" style=\"width:300px;\" />"
+          img = "<img src='#{public_url}' width='150' height='150' id='avatar_preview' />"
+          $("#preview").html(img)
           return
 
         onError: (status) ->
