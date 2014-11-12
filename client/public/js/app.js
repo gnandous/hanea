@@ -37,6 +37,14 @@
         templateUrl: '/../templates/addstaff.html',
         controller: "addstaff",
         controllerUrl: "controllers/addstaff"
+      })).when("/api/staffs", angularAMD.route({
+        templateUrl: '/../templates/stafflist.html',
+        controller: "stafflist",
+        controllerUrl: "controllers/stafflist"
+      })).when("/api/staff/edit/:id", angularAMD.route({
+        templateUrl: '/../templates/staffedit.html',
+        controller: "staffedit",
+        controllerUrl: "controllers/staffedit"
       })).otherwise({
         redirectTo: "/api"
       });

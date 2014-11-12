@@ -9,16 +9,18 @@ bcrypt = require 'bcrypt'
 Staff = new Schema
   name:
     type: String
-    required: true
   lastname:
     type: String
-    require: true
-  email:
+  bio:
     type: String
-    default: null
-    unique: true
+  role:
+    type: String
   avatar:
     type: String
-    defautlt: 'avatar2'
 
+Staff.path('name').required(true, 'Name can not be blank')
+Staff.path('lastname').required(true, 'Lastname can not be blank')
+Staff.path('bio').required(true, 'Bio can not be blank')
+Staff.path('role').required(true, 'Role can not be blank')
+Staff.path('avatar').required(true, 'Avatar can not be blank')
 module.exports = Staff = mongoose.model 'Staff', Staff

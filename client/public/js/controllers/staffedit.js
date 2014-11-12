@@ -1,17 +1,19 @@
 (function() {
   define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _) {
-    return app.controller("addstaff", function($scope, $window, $http, $routeParams) {
+    return app.controller("staffedit", function($scope, $window, $http, $routeParams) {
       var s3_upload;
-      $scope.model = {
-        avatar: $("input[name='avatar_url']").val(),
-        name: $("input[name='nom']").val(),
-        lastname: $("input[name='prenom']").val(),
-        role: $("input[name='role']").val(),
-        bio: $("input[name='bio']").val()
+      $scope.init = function() {
+        return $http.get("/api/secure/staff/show/" + $routeParams.id).success(function(data, status, headers, config) {
+          $scope.model = data;
+          return console.log(data);
+        }).error(function(data, status, headers, config) {
+          return console.log(status);
+        });
       };
-      $scope.create = function() {
+      $scope.init();
+      $scope.update = function() {
         return $.ajax({
-          url: '/api/secure/staff',
+          url: '/api/secure/staff/update/' + $routeParams.id,
           type: 'POST',
           data: {
             avatar: $("input[name='avatar_url']").val(),

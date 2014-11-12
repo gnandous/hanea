@@ -13,7 +13,7 @@
           <div class='profil-image-controls'>
             <div class='imagelocation'>
               <div  id="preview">
-                <img class="avatar size73" width='150' height='150' id="avatar_preview" src="https://pbs.twimg.com/profile_images/459636178086416384/XukPIUJW_bigger.jpeg">
+                <img class="avatar size73" width='150' height='150' id="avatar_preview" src="{{model.avatar}}">
               </div>
             </div>
             <input type='file' id='files' class='validateimagestaff'>
@@ -28,19 +28,19 @@
               <form id='addcontent' class="form-horizontal addstaff">
                 <fieldset>
                   <legend><strong>Relative informations</strong></legend>
-                  <input type="hidden" id="avatar_url" name="avatar_url" model='model.avatar'value="" />
+                  <input type="hidden" id="avatar_url" name="avatar_url" model='model.avatar'value="{{model.avatar}}" />
                   <div class="form-group">
                     <label class="col-sm-3 control-label">Nom<span class="asterisk">*</span>
                     </label>
                     <div class="col-sm-9">
-                      <input type="text" ng-change='change()' ng-model='model.nom' name='nom' data-parsley-minlength="3" class="form-control">
+                      <input type="text" ng-change='change()' ng-model='model.name' name='nom' data-parsley-minlength="3" class="form-control">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label">Prenom <span class="asterisk">*</span>
                     </label>
                     <div class="col-sm-9">
-                      <input type="text" ng-change='change()' ng-model='model.prenom'  name='prenom' data-parsley-minlength="3" class="form-control">
+                      <input type="text" ng-change='change()' ng-model='model.lastname'  name='prenom' data-parsley-minlength="3" class="form-control">
                     </div>
                   </div>
                   <div class="form-group">
@@ -60,7 +60,7 @@
                 </fieldset>
                 <div class='col-sm-9 col-sm-offset-3'>
                   <div class="form-group">
-                    <button ng-click="create()" class="contentsubmit">Enregistrer</button>
+                    <button ng-click="update()" class="contentsubmit">Enregistrer</button>
                   </div>
                 </div>
               </form>

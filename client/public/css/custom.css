@@ -423,6 +423,7 @@ body{
 .message .alert{
   display: none;
 }
+
 .message .alert a{
   color: inherit;
 }
@@ -538,3 +539,56 @@ body{
 .addstaff .bio{
   min-height: 100px !important;
 }
+.stafflist .panel{
+  padding: 0px 0px;
+}
+.staff-element{
+  margin-top: 20px;
+}
+.staff-illustration{
+  position: relative;
+  width: 100%;
+  height: 140px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover; /* pour Firefox */
+  -o-background-size: cover; /* pour Opera */
+  background-size: cover; /* version standardisée */
+}
+.staff-illustration>.overlay{
+  position: absolute;
+  width: 100%;
+  height: 140px;
+  z-index: 4;
+  background-color: rgba(0,0,0,0.3);
+}
+.staff-content{
+  margin-top: 10px;
+  text-align: center;
+}
+.staff-element{
+  cursor: pointer;
+  position: relative;
+}
+.staff-content h3{
+  margin-top: 0px;
+}
+.staff-picture{
+}
+.thumbnails-actions{
+  position: absolute;
+  top: 73px;
+  right: 75px;
+  text-align: center;
+  z-index: 10;
+}
+.thumbnails-actions .fa-edit{
+  padding: 0px 0px;
+}
+.thumbnails-actions a{
+  color: white;
+}
+.thumbnails-actions i{
+  margin-left: 26px;
+}
+
+
