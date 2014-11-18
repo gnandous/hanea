@@ -7,3 +7,4 @@ module.exports =
   current: require './current'
   content: require './content'
   staff: require './staff'
+  article: require './article'

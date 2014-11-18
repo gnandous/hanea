@@ -1,0 +1,54 @@
+<!-- include sidebar -->
+<div sidebarright></div>
+<div class='wrapper'>
+  <!-- include contentmenu -->
+  <div contentmenu></div>
+  <div class='container'>
+      <h1>Articles list</h1>
+  </div>
+  <form class='tablesearch panel'>
+    <input type="text" placeholder='Search' class='form-control'>
+    <i class="fa fa-search"></i>
+  </form>
+  <div class='listtable'>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class='tableleft'>Title</th>
+          <th>Author</th>
+          <th>Status</th>
+          <th><i class='fa fa-calendar'></i></th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class='rowcolor' ng-repeat='content in contents'>
+          <td class='tableleft'><strong><a href='/api/article/update/{{content._id}}'>{{content.title}}</a></strong></td>
+          <td>
+            <a href="#" class="">
+              <img src="/images/avatar2.png" alt="user avatar" width="30" class="p-r-5">
+              <span class="username">{{content.creator.name}}</span>
+            </a>
+          </td>
+          <td>
+            <span ng-if="content.published === true">
+            <i class="fa fa-check"></i>
+            </span>
+            <span ng-if="content.published === false">
+            <i class="fa fa-times"></i>
+            </span>
+          </td>
+          <td>{{content.date | date:'yyyy-MM-dd'}}</td>
+          <td>
+            <a>
+              <i class="glyph-icon flaticon-advanced"></i>
+            </a>
+            <a>
+              <i  ng-click='remove(content._id)' class=" fa fa-trash fa-trash-o trsh-icon"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

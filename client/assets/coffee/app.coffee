@@ -50,6 +50,18 @@ define [
       templateUrl: '/../templates/staffedit.html'
       controller: "staffedit"
       controllerUrl: "controllers/staffedit"
+    ).when("/api/article/add", angularAMD.route
+      templateUrl: '/../templates/addarticle.html'
+      controller: "addarticle"
+      controllerUrl: "controllers/addarticle"
+    ).when("/api/articles", angularAMD.route
+      templateUrl: '/../templates/articlelist.html'
+      controller: "articlelist"
+      controllerUrl: "controllers/articlelist"
+    ).when("/api/article/update/:id", angularAMD.route
+      templateUrl: '/../templates/articleedit.html'
+      controller: "articleedit"
+      controllerUrl: "controllers/articleedit"
     ).otherwise redirectTo: "/api"
     $locationProvider.html5Mode(true)
 

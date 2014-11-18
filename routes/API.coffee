@@ -31,6 +31,12 @@ module.exports = () ->
   APIRouter.post '/signup', controllers.API.user.register
   APIRouter.post '/login', controllers.API.user.auth
 
+  #articles
+  APIRouter.get '/article/add', requestInterceptor, controllers.API.user.welcome
+  APIRouter.get '/articles', requestInterceptor, controllers.API.user.welcome
+  APIRouter.get '/article/update/:id', requestInterceptor, controllers.API.user.welcome
+
+
 
   #API call with ajax
   APIRouter.get '/secure/welcome', controllers.API.user.restricted
@@ -45,5 +51,14 @@ module.exports = () ->
   APIRouter.post '/secure/content/update/:id', controllers.API.user.content.update
   APIRouter.get '/secure/content/remove/:id', controllers.API.user.content.delete
   APIRouter.get '/secure/content/detail/:id', controllers.API.user.content.detail
+
+  #handle articles request
+  APIRouter.get '/secure/articles', controllers.API.user.article.index
+  APIRouter.get '/secure/article/:id', controllers.API.user.article.show
+  APIRouter.get '/secure/article/remove/:id', controllers.API.user.article.destroy
+  APIRouter.post '/secure/article', controllers.API.user.article.create
+  APIRouter.post '/secure/article/update/:id', controllers.API.user.article.update
+
+
   APIRouter.get '/*', badRequest
   return APIRouter
