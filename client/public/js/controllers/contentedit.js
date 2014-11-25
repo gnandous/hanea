@@ -36,7 +36,7 @@
             published: $scope.inputs.publication.is(':checked')
           },
           success: function(data) {
-            $(".message .alert").html("<i class='fa fa-check'></i> Your post has been Updated succesfully. Thank You. <strong> <a href='/api/contenu/all'>See content</a></strong>");
+            $(".message .alert").html("<i class='fa fa-check'></i> Your post has been Updated succesfully. Thank You. <strong> <a href='/api/articles'>See content</a></strong>");
             $(".message .alert").fadeIn();
             return $('html, body').animate({
               scrollTop: 0

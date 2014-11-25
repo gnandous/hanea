@@ -26,7 +26,7 @@ module.exports =
       published: req.body.published
       title: req.body.title
       subtitle: req.body.subtitle
-      content: req.body.content
+      content: req.body.content?
     content.save (err, content)->
       return res.status(400).send(err) if err
     return res.status(200).send(content)
