@@ -590,5 +590,8 @@ body{
 .thumbnails-actions i{
   margin-left: 26px;
 }
+.timeline-panel{
+  margin-top: -12px;
+}
 
 

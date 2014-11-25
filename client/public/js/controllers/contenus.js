@@ -1,7 +1,7 @@
 (function() {
   define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _, tinymce, jqtinymce) {
     return app.controller("contenus", function($scope, $window, $http) {
-      $scope.content = "<h2>Try me!</h2><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p>";
+      $scope.content = "";
       $scope.disabled = false;
       $scope.inputs = {
         location: $("#addcontent").find("#location"),
