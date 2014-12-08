@@ -5,6 +5,7 @@ favicon = require("serve-favicon")
 cookieParser = require("cookie-parser")
 bodyParser = require("body-parser")
 config = require './config'
+multer = require 'multer'
 app = express()
 server = require('http').Server app
 env = process.env.NODE_ENV or 'development'
@@ -25,6 +26,7 @@ app.set 'title', 'Hanea'
 app.use(logger('dev'))
 app.use bodyParser.json()
 app.use bodyParser.urlencoded(extended: false)
+app.use multer({dest: "#{__dirname}/client/public/uploads"})
 app.use cookieParser()
 app.use require('less-middleware')
   src    : "#{__dirname}/client/assets/less"

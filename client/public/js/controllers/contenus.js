@@ -1,6 +1,7 @@
 (function() {
   define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _, tinymce, jqtinymce) {
-    return app.controller("contenus", function($scope, $window, $http) {
+    return app.controller("contenus", function($scope, $window, $http, Model) {
+      $scope.user = Model.data;
       $scope.content = "";
       $scope.disabled = false;
       $scope.inputs = {

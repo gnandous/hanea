@@ -1,14 +1,31 @@
 define [
   'app'
   'jquery'
+  'dropzone'
   'underscore'
   'directives/contentmenu'
 ], (app, $, _)->
-  app.controller "addarticle", ($scope, $window, $http)->
+  app.controller "addarticle", ($scope, $window, $http, Model)->
+    $scope.user = Model.data
     $scope.model =
       title: ""
       content: ""
       published: false
+    $scope.init = ()->
+      $("#dropFile").dropzone
+        url: "/api/secure/article/file/post"
+        thumbnailWidth:250
+        thumbnailHeight:150
+        previewTemplate: "<div></div>"
+        success:(file, data)->
+          console.log data
+          $("#dropFile").append("<img width='100%' height='400px' src='/uploads/#{data}'/>")
+          #$('#MyPreview').css("background-image", "url(#{data})")
+          #$(".dropzone").css("background-color", "red")
+          #$(".dropzone").css("background-image", data)
+
+
+    $scope.init()
     $scope.create = ->
       console.log @model.published
       $.ajax

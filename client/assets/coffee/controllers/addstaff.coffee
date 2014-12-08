@@ -4,7 +4,8 @@ define [
   'underscore'
   'directives/contentmenu'
 ], (app, $, _)->
-  app.controller "addstaff", ($scope, $window, $http, $routeParams)->
+  app.controller "addstaff", ($scope, $window, $http, $routeParams, Model)->
+    $scope.user = Model.data
 
     $scope.model =
       avatar: $("input[name='avatar_url']").val()

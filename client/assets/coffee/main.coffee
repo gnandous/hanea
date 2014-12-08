@@ -1,6 +1,10 @@
 require.config
   baseUrl: '/js'
   paths:
+    ## dropzone
+    dropzone: 'plugins/dropzone/dropzone'
+
+
     ## angular
     angular:  'plugins/angular/angular.min'
     angularAMD: 'plugins/angular/angularAMD.min'
@@ -34,5 +38,6 @@ require.config
     textangular: ['angular']
     angular_route: ['angular']
     ngload: ['angularAMD']
+    dropzone: ['jquery']
 
   deps: ['app']

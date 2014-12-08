@@ -4,7 +4,8 @@ define [
   'underscore'
   'directives/contentmenu'
 ], (app, $, _)->
-  app.controller "articleedit", ($scope, $window, $http, $routeParams)->
+  app.controller "articleedit", ($scope, $window, $http, $routeParams, Model)->
+    $scope.user = Model.data
     $scope.init = ()->
       $http.get("/api/secure/article/#{$routeParams.id}").success((data, status, headers, config) ->
         $scope.model = data

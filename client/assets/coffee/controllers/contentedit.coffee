@@ -4,7 +4,7 @@ define [
   'underscore'
   'directives/contentmenu'
 ], (app, $, _)->
-  app.controller "contentedit", ($scope, $window, $http, $routeParams)->
+  app.controller "contentedit", ($scope, $window, $http, $routeParams, Model)->
     $scope.inputs =
       location : $("#addcontent").find("#location")
       title : $("#addcontent").find("#title")
@@ -13,6 +13,7 @@ define [
       publication : $("#addcontent").find("#published")
 
     $scope.init = ()->
+      $scope.user = Model.data
       $http.get("/api/secure/content/detail/#{$routeParams.id}").success((data, status, headers, config) ->
         $scope.model = data
       ).error (data, status, headers, config) ->

@@ -1,6 +1,7 @@
 (function() {
   define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _) {
-    return app.controller("stafflist", function($scope, $window, $http, $routeParams) {
+    return app.controller("stafflist", function($scope, $window, $http, $routeParams, Model) {
+      $scope.user = Model.data;
       $scope.init = function() {
         return $http.get("/api/secure/staffs").success(function(data, status, headers, config) {
           return $scope.stafflist = data;

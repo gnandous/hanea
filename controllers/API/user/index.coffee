@@ -8,3 +8,4 @@ module.exports =
   content: require './content'
   staff: require './staff'
   article: require './article'
+  user: require './user'

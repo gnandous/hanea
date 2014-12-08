@@ -1,6 +1,7 @@
 (function() {
   define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _) {
-    return app.controller("contentlist", function($scope, $window, $http, listOfContents) {
+    return app.controller("contentlist", function($scope, $window, $http, listOfContents, Model) {
+      $scope.user = Model.data;
       $scope.contents = listOfContents.data;
       return $scope.remove = function(id) {
         return $.ajax({

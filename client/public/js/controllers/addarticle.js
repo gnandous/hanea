@@ -1,11 +1,24 @@
 (function() {
-  define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _) {
+  define(['app', 'jquery', 'dropzone', 'underscore', 'directives/contentmenu'], function(app, $, _) {
     return app.controller("addarticle", function($scope, $window, $http) {
       $scope.model = {
         title: "",
         content: "",
         published: false
       };
+      $scope.init = function() {
+        return $("#dropFile").dropzone({
+          url: "/api/secure/article/file/post",
+          thumbnailWidth: 250,
+          thumbnailHeight: 150,
+          previewTemplate: "<div></div>",
+          success: function(file, data) {
+            console.log(data);
+            return $("#dropFile").append("<img width='100%' height='400px' src='/uploads/" + data + "'/>");
+          }
+        });
+      };
+      $scope.init();
       return $scope.create = function() {
         console.log(this.model.published);
         return $.ajax({

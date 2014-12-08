@@ -4,7 +4,8 @@ define [
   'underscore'
   'directives/contentmenu'
 ], (app, $, _)->
-  app.controller "contentlist", ($scope, $window, $http, listOfContents)->
+  app.controller "contentlist", ($scope, $window, $http, listOfContents, Model)->
+    $scope.user = Model.data
     $scope.contents = listOfContents.data
     $scope.remove = (id)->
       $.ajax

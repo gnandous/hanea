@@ -4,8 +4,9 @@ define [
   'underscore'
   'directives/contentmenu'
 ], (app, $, _)->
-  app.controller "staffedit", ($scope, $window, $http, $routeParams)->
+  app.controller "staffedit", ($scope, $window, $http, $routeParams, Model)->
     $scope.init = ()->
+      $scope.user = Model.data
       $http.get("/api/secure/staff/show/#{$routeParams.id}").success((data, status, headers, config) ->
         $scope.model = data
         console.log data

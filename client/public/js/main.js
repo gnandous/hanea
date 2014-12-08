@@ -2,6 +2,7 @@
   require.config({
     baseUrl: '/js',
     paths: {
+      dropzone: 'plugins/dropzone/dropzone',
       angular: 'plugins/angular/angular.min',
       angularAMD: 'plugins/angular/angularAMD.min',
       angular_route: 'plugins/angular/angular-route',
@@ -31,7 +32,8 @@
       angular_sanitize: ['angular'],
       textangular: ['angular'],
       angular_route: ['angular'],
-      ngload: ['angularAMD']
+      ngload: ['angularAMD'],
+      dropzone: ['jquery']
     },
     deps: ['app']
   });

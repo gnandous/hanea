@@ -4,7 +4,8 @@ define [
   'underscore'
   'directives/contentmenu'
 ], (app, $, _, tinymce, jqtinymce)->
-  app.controller "contenus", ($scope, $window, $http)->
+  app.controller "contenus", ($scope, $window, $http, Model)->
+    $scope.user = Model.data
     $scope.content = ""
     $scope.disabled = false
     $scope.inputs =

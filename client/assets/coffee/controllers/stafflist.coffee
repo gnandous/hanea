@@ -4,7 +4,8 @@ define [
   'underscore'
   'directives/contentmenu'
 ], (app, $, _)->
-  app.controller "stafflist", ($scope, $window, $http, $routeParams)->
+  app.controller "stafflist", ($scope, $window, $http, $routeParams, Model)->
+    $scope.user = Model.data
 
     $scope.init = ()->
       $http.get("/api/secure/staffs").success((data, status, headers, config) ->

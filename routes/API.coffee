@@ -35,6 +35,9 @@ module.exports = () ->
   APIRouter.get '/article/add', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/articles', requestInterceptor, controllers.API.user.welcome
   APIRouter.get '/article/update/:id', requestInterceptor, controllers.API.user.welcome
+  #articles
+
+  APIRouter.get '/user/:id/edit', requestInterceptor, controllers.API.user.welcome
 
 
 
@@ -57,7 +60,11 @@ module.exports = () ->
   APIRouter.get '/secure/article/:id', controllers.API.user.article.show
   APIRouter.get '/secure/article/remove/:id', controllers.API.user.article.destroy
   APIRouter.post '/secure/article', controllers.API.user.article.create
+  APIRouter.post '/secure/article/file/post', controllers.API.user.article.file
   APIRouter.post '/secure/article/update/:id', controllers.API.user.article.update
+
+  #handle users request
+  APIRouter.post '/secure/user/:id/update', controllers.API.user.user.update
 
 
   APIRouter.get '/*', badRequest

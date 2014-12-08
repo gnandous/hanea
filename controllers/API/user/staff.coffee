@@ -61,12 +61,13 @@ module.exports =
   ## send files direct to amazon and return url access
   mys3: (req, res, next) ->
     s3token = randomToken(8)
-    sendToAmazon req.query.s3_object_type, s3token, (err, data)->
+    dispath = "user-#{req.user.id}/#{s3token}"
+    sendToAmazon req.query.s3_object_type, dispath, (err, data)->
       if err
         console.log err
       else
         return_data =
           signed_request: data
-          url: "https://" + config.aws.S3_BUCKET + ".s3.amazonaws.com/" + s3token
+          url: "https://" + config.aws.S3_BUCKET + ".s3.amazonaws.com/" + dispath
         res.write JSON.stringify(return_data)
         res.end()

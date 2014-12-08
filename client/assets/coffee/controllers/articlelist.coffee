@@ -4,7 +4,8 @@ define [
   'underscore'
   'directives/contentmenu'
 ], (app, $, _)->
-  app.controller "articlelist", ($scope, $window, $http, $routeParams)->
+  app.controller "articlelist", ($scope, $window, $http, $routeParams, Model)->
+    $scope.user = Model.data
     $scope.remove = (id)->
       $http.get("/api/secure/article/remove/#{id}").success((data, status, headers, config) ->
         $scope.contents = data

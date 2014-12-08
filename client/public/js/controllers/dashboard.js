@@ -5,7 +5,8 @@
       $scope.user = {
         name: Model.data.name,
         email: "souleymane.gnandou@gmail.com",
-        post: "Developpeur Node.js"
+        post: "Developpeur Node.js",
+        id: Model.data._id
       };
       $scope.init = function() {
         return $http.get("/api/secure/content/all").success(function(data, status, headers, config) {

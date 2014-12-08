@@ -8,6 +8,7 @@ define [
       name: Model.data.name
       email: "souleymane.gnandou@gmail.com"
       post: "Developpeur Node.js"
+      _id: Model.data._id
 
     $scope.init = ()->
       $http.get("/api/secure/content/all").success((data, status, headers, config) ->

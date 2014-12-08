@@ -9,43 +9,52 @@
         <div class='col-md-8'>
           <div class='panel'>
             <div class='panel-body'>
-            <div id='message-stat' class='message'>
+              <div id='message-stat' class='message'>
                 <div class="alert alert-success"role="alert">
                   <strong>Well done!</strong> You successfully read this important alert message.
                 </div>
-              <form role="form" id='addcontent' class=''>
-                <h1>Article</h1>
-                <div class="form-group">
-                  <label for="Title">Title</label><span class="asterisk">*</span>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name='title' placeholder='title' ng-model='model.title'>
-                  <label class="control-label" for="title"><span class="asterisk">{{errors.title.message}}</span></label>
+
+                  <form role="form" id='addcontent' class=''>
+                    <h1>Article</h1>
+                    <div class="form-group">
+                      <label for="Title">Title</label><span class="asterisk">*</span>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name='title' placeholder='title' ng-model='model.title'>
+                      <label class="control-label" for="title"><span class="asterisk">{{errors.title.message}}</span></label>
+                    </div>
+                      <label>Image</label>
+                      <!--:: dropzone file -->
+                       <div class="dropzone" id="dropFile" style='margin-bottom:20px;'>
+                       </div>
+                      <!--:: end dropzone handling -->
+                    <div class='form-group'>
+                    <input type="hidden" name"article_image" ng-model='model.image'>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Content </label><span class="asterisk">*</span>
+                      <span class="tips">Set the content of your post</span>
+                      <div class="controls">
+                        <text-angular ta-toolbar="[['h1','h2','h3'],['bold','italics'], ['justifyLeft','justifyCenter','justifyRight', 'ul', 'ol']]" class='ta-editor' id="content"  ng-model="model.content"></text-angular>
+                        <!--
+                        <textarea ng-change='change()' ng-model='content' id="content" class='form-control' name="content"></textarea>
+                        -->
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <legend><strong>Publication:</strong></legend>
+                      <span class="tips">Check the box to publish your post.</span>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" ng-model="model.published" id="published"> Published
+                        </label>
+                      </div>
+                    </div>
+                    <button ng-click="create()" class="contentsubmit">Enregistrer</button>
+                  </form>
                 </div>
-                <div class="form-group">
-                  <label class="form-label">Content </label><span class="asterisk">*</span>
-                  <span class="tips">Set the content of your post</span>
-                  <div class="controls">
-                    <text-angular ta-toolbar="[['h1','h2','h3'],['bold','italics'], ['justifyLeft','justifyCenter','justifyRight', 'ul', 'ol']]" class='ta-editor' id="content"  ng-model="model.content"></text-angular>
-                    <!--
-                    <textarea ng-change='change()' ng-model='content' id="content" class='form-control' name="content"></textarea>
-                    -->
-                  </div>
-                </div>
-                <div class="form-group">
-                  <legend><strong>Publication:</strong></legend>
-                  <span class="tips">Check the box to publish your post.</span>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" ng-model="model.published" id="published"> Published
-                    </label>
-                  </div>
-                </div>
-                <button ng-click="create()" class="contentsubmit">Enregistrer</button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
