@@ -14,8 +14,6 @@ define [
       templateUrl: "/../templates/login.html"
       controller: "UserCtrl"
       controllerUrl: "controllers/login"
-      resolve:
-        Model: _Ressources.Model
     ).when("/api", angularAMD.route
       templateUrl: '/../templates/dashboard.html'
       controller: "dashboard"

@@ -6,10 +6,7 @@
       $routeProvider.when("/api/login", angularAMD.route({
         templateUrl: "/../templates/login.html",
         controller: "UserCtrl",
-        controllerUrl: "controllers/login",
-        resolve: {
-          Model: _Ressources.Model
-        }
+        controllerUrl: "controllers/login"
       })).when("/api", angularAMD.route({
         templateUrl: '/../templates/dashboard.html',
         controller: "dashboard",

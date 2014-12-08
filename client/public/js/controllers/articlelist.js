@@ -1,6 +1,7 @@
 (function() {
   define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _) {
-    return app.controller("articlelist", function($scope, $window, $http, $routeParams) {
+    return app.controller("articlelist", function($scope, $window, $http, $routeParams, Model) {
+      $scope.user = Model.data;
       $scope.remove = function(id) {
         return $http.get("/api/secure/article/remove/" + id).success(function(data, status, headers, config) {
           return $scope.contents = data;
