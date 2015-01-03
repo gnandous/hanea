@@ -9,3 +9,5 @@ module.exports =
   staff: require './staff'
   article: require './article'
   user: require './user'
+  articleParagraphe : require './articleParagraphe'
+  articleMedia: require './articleMedia'

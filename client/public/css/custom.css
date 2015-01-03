@@ -594,4 +594,23 @@ body{
   margin-top: -12px;
 }
 
+/** article style **/
+#addcontent #hiddeninsertimage{
+  display: none;
+}
+#addcontent .article-media{
+  cursor: pointer;
+}
+#addcontent .fa-file-image-o{
+  font-size: 60px;
+
+}
+.btn{
+  border-radius: 0px;
+}
+/** text angular error style **/
+
+.text_angular_error .form-control{
+  background-color: #f2dede !important;
+}
 

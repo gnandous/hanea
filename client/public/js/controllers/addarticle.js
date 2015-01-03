@@ -1,6 +1,7 @@
 (function() {
   define(['app', 'jquery', 'dropzone', 'underscore', 'directives/contentmenu'], function(app, $, _) {
-    return app.controller("addarticle", function($scope, $window, $http) {
+    return app.controller("addarticle", function($scope, $window, $http, Model) {
+      $scope.user = Model.data;
       $scope.model = {
         title: "",
         content: "",
@@ -19,6 +20,7 @@
         });
       };
       $scope.init();
+      $scope.insertmedia = function() {};
       return $scope.create = function() {
         console.log(this.model.published);
         return $.ajax({

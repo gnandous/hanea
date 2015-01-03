@@ -92,6 +92,20 @@
         resolve: {
           Model: _Ressources.Model
         }
+      })).when("/api/article/:id/paragraphe", angularAMD.route({
+        templateUrl: '/../templates/addparagraphe.html',
+        controller: "ArticleParagraphe",
+        controllerUrl: "controllers/articleparagraphe",
+        resolve: {
+          Model: _Ressources.Model
+        }
+      })).when("/api/article/:id/media", angularAMD.route({
+        templateUrl: '/../templates/addmedia.html',
+        controller: "ArticleMedia",
+        controllerUrl: "controllers/articlemedia",
+        resolve: {
+          Model: _Ressources.Model
+        }
       })).otherwise({
         redirectTo: "/api"
       });
@@ -100,7 +114,15 @@
     myApp.config(function($httpProvider) {
       return $httpProvider.interceptors.push('authInterceptor');
     });
-    myApp.run(function() {
+    myApp.run(function($rootScope) {
+      $rootScope.$on("$routeChangeStart", function(e, curr, prev) {
+        if (curr.$$route && curr.$$route.resolve) {
+          return $rootScope.loadingView = true;
+        }
+      });
+      $rootScope.$on("$routeChangeSuccess", function(e, curr, prev) {
+        return $rootScope.loadingView = false;
+      });
       return console.log("Running app ...");
     });
     return angularAMD.bootstrap(myApp);

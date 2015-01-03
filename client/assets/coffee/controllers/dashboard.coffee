@@ -6,9 +6,9 @@ define [
     $scope.message = "Bienvenu sur la page dashboard Vous êtes connectés"
     $scope.user =
       name: Model.data.name
-      email: "souleymane.gnandou@gmail.com"
-      post: "Developpeur Node.js"
+      email: Model.data.email
       _id: Model.data._id
+      avatar: Model.data.avatar
 
     $scope.init = ()->
       $http.get("/api/secure/content/all").success((data, status, headers, config) ->

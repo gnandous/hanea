@@ -1,8 +1,9 @@
 (function() {
   define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _) {
-    return app.controller("staffedit", function($scope, $window, $http, $routeParams) {
+    return app.controller("staffedit", function($scope, $window, $http, $routeParams, Model) {
       var s3_upload;
       $scope.init = function() {
+        $scope.user = Model.data;
         return $http.get("/api/secure/staff/show/" + $routeParams.id).success(function(data, status, headers, config) {
           $scope.model = data;
           return console.log(data);

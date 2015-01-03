@@ -1,6 +1,6 @@
 (function() {
   define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _) {
-    return app.controller("contentedit", function($scope, $window, $http, $routeParams) {
+    return app.controller("contentedit", function($scope, $window, $http, $routeParams, Model) {
       $scope.inputs = {
         location: $("#addcontent").find("#location"),
         title: $("#addcontent").find("#title"),
@@ -9,6 +9,7 @@
         publication: $("#addcontent").find("#published")
       };
       $scope.init = function() {
+        $scope.user = Model.data;
         return $http.get("/api/secure/content/detail/" + $routeParams.id).success(function(data, status, headers, config) {
           return $scope.model = data;
         }).error(function(data, status, headers, config) {

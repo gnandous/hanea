@@ -4,9 +4,9 @@
       $scope.message = "Bienvenu sur la page dashboard Vous êtes connectés";
       $scope.user = {
         name: Model.data.name,
-        email: "souleymane.gnandou@gmail.com",
-        post: "Developpeur Node.js",
-        _id: Model.data._id
+        email: Model.data.email,
+        _id: Model.data._id,
+        avatar: Model.data.avatar
       };
       $scope.init = function() {
         return $http.get("/api/secure/content/all").success(function(data, status, headers, config) {

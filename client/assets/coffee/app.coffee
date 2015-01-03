@@ -87,12 +87,32 @@ define [
       controllerUrl: "controllers/User"
       resolve:
         Model: _Ressources.Model
+    ).when("/api/article/:id/paragraphe", angularAMD.route
+      templateUrl: '/../templates/addparagraphe.html'
+      controller: "ArticleParagraphe"
+      controllerUrl: "controllers/articleparagraphe"
+      resolve:
+        Model: _Ressources.Model
+    ).when("/api/article/:id/media", angularAMD.route
+      templateUrl: '/../templates/addmedia.html'
+      controller: "ArticleMedia"
+      controllerUrl: "controllers/articlemedia"
+      resolve:
+        Model: _Ressources.Model
     ).otherwise redirectTo: "/api"
     $locationProvider.html5Mode(true)
 
   myApp.config ($httpProvider)->
     $httpProvider.interceptors.push('authInterceptor')
 
-  myApp.run ()->
+  myApp.run ($rootScope)->
+    $rootScope.$on "$routeChangeStart", (e, curr, prev)->
+      ## show loading page
+      $rootScope.loadingView = true  if curr.$$route and curr.$$route.resolve
+    $rootScope.$on "$routeChangeSuccess", (e, curr, prev)->
+      ## hide loading page
+      $rootScope.loadingView = false
+
+
     console.log ("Running app ...")
   angularAMD.bootstrap(myApp)

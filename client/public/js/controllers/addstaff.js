@@ -1,7 +1,8 @@
 (function() {
   define(['app', 'jquery', 'underscore', 'directives/contentmenu'], function(app, $, _) {
-    return app.controller("addstaff", function($scope, $window, $http, $routeParams) {
+    return app.controller("addstaff", function($scope, $window, $http, $routeParams, Model) {
       var s3_upload;
+      $scope.user = Model.data;
       $scope.model = {
         avatar: $("input[name='avatar_url']").val(),
         name: $("input[name='nom']").val(),

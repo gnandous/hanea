@@ -66,6 +66,13 @@ module.exports = () ->
   #handle users request
   APIRouter.post '/secure/user/:id/update', controllers.API.user.user.update
 
+  #handle article paragraphe / media
+  APIRouter.post '/secure/article/:id/paragraphe', controllers.API.user.articleParagraphe.create
+  APIRouter.post '/secure/article/:id/media', controllers.API.user.articleMedia.create
 
-  APIRouter.get '/*', badRequest
+  #APIRouter.get '/secure/', controllers.API.user.article.index
+
+
+  APIRouter.get '/*', controllers.API.user.welcome
+  #APIRouter.get '/*', badRequest
   return APIRouter

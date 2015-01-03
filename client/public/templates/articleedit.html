@@ -9,7 +9,7 @@
         <div class='col-md-8'>
           <div class='panel'>
             <div class='panel-body'>
-             <div id='message-stat' class='message'>
+              <div id='message-stat' class='message'>
                 <div class="alert alert-success"role="alert">
                   <strong>Well done!</strong> You successfully read this important alert message.
                 </div>
@@ -42,6 +42,15 @@
                 </div>
                 <button ng-click="update()" class="contentsubmit">Enregistrer</button>
               </form>
+            </div>
+          </div>
+        </div>
+        <div class='col-md-3'>
+          <div class='panel'>
+            <div class='panel-body'>
+              <h4>Articles Items</h4>
+              <a href="/api/article/{{model._id}}/paragraphe" class="btn btn-primary m-t-10"><i class="fa fa-plus p-r-10"></i> Add paragraphe</a>
+               <a href="/api/article/{{model._id}}/media" class="btn btn-primary m-t-10" style="width:190px;"><i class="fa fa-plus p-r-10"></i> Add media</a>
             </div>
           </div>
         </div>
