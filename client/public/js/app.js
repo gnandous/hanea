@@ -106,6 +106,13 @@
         resolve: {
           Model: _Ressources.Model
         }
+      })).when("/api/article/:id/overview", angularAMD.route({
+        templateUrl: '/../templates/overview.html',
+        controller: "ArticleView",
+        controllerUrl: "controllers/articleview",
+        resolve: {
+          Model: _Ressources.Model
+        }
       })).otherwise({
         redirectTo: "/api"
       });

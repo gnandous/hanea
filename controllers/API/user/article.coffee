@@ -1,5 +1,6 @@
 validator = require '../../../libs/validator'
 User = require '../../../models/user'
+DbHelpers = require '../../../libs/dbhelpers'
 _ = require 'underscore'
 Article = require '../../../models/article'
 
@@ -22,13 +23,20 @@ module.exports =
         return res.status(400).send(err)
       else
         return res.status(200).send(article)
+
   show: (req, res, next)->
     conditions =
       _id: req.params.id
     Article.findOne conditions, (err, article)->
       if err
         return res.status(400).send(err)
-      return res.status(200).send(article)
+      ## TODO populate items
+      DbHelpers.PopulateArticleItems req.params.id, (err, populated_items)->
+        unless err
+          console.log populated_items
+          article.set "items", populated_items,
+            strict: false
+          return res.status(200).send(article)
 
 
 
