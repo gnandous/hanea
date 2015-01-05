@@ -1,4 +1,6 @@
 Article = require '../models/article'
+ArticleParagraphe = require '../models/ArticleParagraphe'
+ArticleMedia = require '../models/Articlemedia'
 ArticleItem = require '../models/articleitem'
 
 module.exports =
@@ -11,7 +13,7 @@ module.exports =
       (next = ->
         unless uids.length
           return callback null, populated_items
-        uid = uids.pop()
+        uid = uids.shift()
         if uid.item_type is "MEDIA"
           uid.populate
             path: 'item_id'
@@ -27,3 +29,14 @@ module.exports =
             populated_items.push item
             next()
       )()
+  RemoveApropriateItem: (article_id)->
+    ArticleMedia.remove
+      article_id: article_id
+    , (err)->
+      if err then console.log err
+    ArticleParagraphe.remove
+      article_id: article_id
+    , (err)->
+      if err then console.log err
+
+

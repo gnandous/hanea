@@ -4,8 +4,11 @@
   <!-- include contentmenu -->
   <div contentmenu></div>
   <div class='container'>
-     <div ng-show='loadingView' class="loader"></div>
-      <h1>Articles list</h1>
+    <div ng-show='loadingView' class="loader"></div>
+    <h1>Articles list</h1>
+  </div>
+  <div class="alert alert-success"role="alert" ng-show='removed'>
+    <strong>Article was successfully removed</strong>.
   </div>
   <form class='tablesearch panel'>
     <input type="text" placeholder='Search' class='form-control'>
@@ -23,8 +26,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr class='rowcolor' ng-repeat='content in contents'>
-          <td class='tableleft'><strong><a href='/api/article/update/{{content._id}}'>{{content.title}}</a></strong></td>
+        <tr class='rowcolor' ng-repeat='content in contents' data-content="{{content._id}}">
+          <td class='tableleft'><strong><a href='/api/article/{{content._id}}/overview'>{{content.title}}</a></strong></td>
           <td>
             <a href="#" class="">
               <img src="/images/avatar2.png" alt="user avatar" width="30" class="p-r-5">

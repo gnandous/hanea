@@ -6,7 +6,8 @@
         $scope.paragraphe = {};
         $scope.paragraphe.article_id = $routeParams.id;
         $scope.content_state = false;
-        return $scope.success = false;
+        $scope.success = false;
+        return $scope.article_id = $routeParams;
       })();
       return $scope.create = function() {
         if (!this.paragraphe.content) {

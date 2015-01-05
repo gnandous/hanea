@@ -12,6 +12,7 @@ define [
       $scope.media.article_id = $routeParams.id
       $scope.content_state = false
       $scope.success = false
+      $scope.article_id = $routeParams
 
 
       $("#dropFile").dropzone

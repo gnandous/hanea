@@ -18,6 +18,7 @@ module.exports =
       creator: req.user.id
       title: req.body.title
       content: req.body.content
+      illustrator: req.body.illustration
     article.save (err, article)->
       if err
         return res.status(400).send(err)
@@ -28,17 +29,15 @@ module.exports =
     conditions =
       _id: req.params.id
     Article.findOne conditions, (err, article)->
-      if err
+      if article
+        DbHelpers.PopulateArticleItems req.params.id, (err, populated_items)->
+          unless err
+            article.set "items", populated_items,
+              strict: false
+            return res.status(200).send(article)
+          return res.status(400).send(err)
+      else
         return res.status(400).send(err)
-      ## TODO populate items
-      DbHelpers.PopulateArticleItems req.params.id, (err, populated_items)->
-        unless err
-          console.log populated_items
-          article.set "items", populated_items,
-            strict: false
-          return res.status(200).send(article)
-
-
 
   update: (req, res, next)->
     condition =
@@ -58,6 +57,7 @@ module.exports =
       _id: req.params.id
     Article.findOne condition, (err, article)->
       return res.status(404).send(err) unless article
+      DbHelpers.RemoveApropriateItem req.params.id
       article.remove()
       Article.find()
       .populate("creator")

@@ -11,6 +11,7 @@ define [
       $scope.paragraphe.article_id = $routeParams.id
       $scope.content_state = false
       $scope.success = false
+      $scope.article_id = $routeParams
     )()
 
     $scope.create = ()->

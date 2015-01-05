@@ -9,8 +9,7 @@
       };
       $scope.init = function() {
         return $http.get("/api/secure/content/all").success(function(data, status, headers, config) {
-          $scope.contents = data;
-          return console.log(data);
+          return $scope.contents = data;
         }).error(function(data, status, headers, config) {
           return console.log(status);
         });

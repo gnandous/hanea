@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class='rowcolor' ng-repeat='content in contents'>
+        <tr class='rowcolor' ng-repeat='content in contents' data-content="{{content._id}}">
           <td class='tableleft'><strong><a href='/api/contenu/edit/{{content._id}}'>{{content.title}}</a></strong></td>
           <td>
             <a href="#" class="">
@@ -43,7 +43,7 @@
               <i class="glyph-icon flaticon-advanced"></i>
             </a>
             <a>
-              <i  ng-click='remove(content._id)' class=" fa fa-trash fa-trash-o trsh-icon"></i>
+              <i  ng-click='remove(content._id)'class=" fa fa-trash fa-trash-o trsh-icon"></i>
             </a>
           </td>
         </tr>

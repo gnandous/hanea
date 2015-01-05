@@ -7,8 +7,9 @@ define [
   app.controller "articlelist", ($scope, $window, $http, $routeParams, Model)->
     $scope.user = Model.data
     $scope.remove = (id)->
+      $("tr[data-content=#{id}]").hide()
       $http.get("/api/secure/article/remove/#{id}").success((data, status, headers, config) ->
-        $scope.contents = data
+        $scope.removed = true
       ).error (data, status, headers, config) ->
         console.log status
 

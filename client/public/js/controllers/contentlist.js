@@ -4,14 +4,11 @@
       $scope.user = Model.data;
       $scope.contents = listOfContents.data;
       return $scope.remove = function(id) {
+        $("tr[data-content=" + id + "]").hide();
         return $.ajax({
           url: '/api/secure/content/remove/' + id,
           type: 'GET',
-          success: function(data) {
-            return $scope.$apply(function() {
-              return $scope.contents = data;
-            });
-          },
+          success: function(data) {},
           error: function(jqXHR, textStatus, errorThrown) {
             return console.log(jqXHR.status);
           }

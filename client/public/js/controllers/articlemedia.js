@@ -7,6 +7,7 @@
         $scope.media.article_id = $routeParams.id;
         $scope.content_state = false;
         $scope.success = false;
+        $scope.article_id = $routeParams;
         return $("#dropFile").dropzone({
           url: "/api/secure/article/" + $routeParams + "/media",
           thumbnailWidth: 250,

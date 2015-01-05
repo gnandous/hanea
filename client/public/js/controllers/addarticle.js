@@ -5,6 +5,7 @@
       $scope.model = {
         title: "",
         content: "",
+        illustration: "",
         published: false
       };
       $scope.init = function() {
@@ -14,7 +15,9 @@
           thumbnailHeight: 150,
           previewTemplate: "<div></div>",
           success: function(file, data) {
-            console.log(data);
+            $scope.$apply(function() {
+              return $scope.model.illustration = data;
+            });
             return $("#dropFile").append("<img width='100%' height='400px' src='/uploads/" + data + "'/>");
           }
         });
@@ -29,7 +32,8 @@
           data: {
             title: this.model.title,
             content: this.model.content,
-            published: this.model.published
+            published: this.model.published,
+            illustration: this.model.illustration
           },
           success: function(data) {
             $scope.$apply(function() {

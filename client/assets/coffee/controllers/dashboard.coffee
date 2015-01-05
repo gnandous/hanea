@@ -12,7 +12,6 @@ define [
     $scope.init = ()->
       $http.get("/api/secure/content/all").success((data, status, headers, config) ->
         $scope.contents = data
-        console.log data
       ).error (data, status, headers, config) ->
         console.log status
 

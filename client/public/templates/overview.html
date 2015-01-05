@@ -1,0 +1,43 @@
+<!-- include sidebar -->
+<div sidebarright></div>
+<div class='wrapper'>
+  <!-- include contentmenu -->
+  <div contentmenu></div>
+  <div class='container'>
+    <div id='main-content'>
+      <div class="row">
+        <div class='col-md-8'>
+          <div class='panel'>
+            <div class='panel-body'>
+              <div id="article-read">
+                <h1>{{article.title}}</h1>
+                <p ng-bind-html="article.content"></p>
+                <div class="items" ng-repeat='item in article.items'>
+                  <div ng-if="item.item_type == 'MEDIA'" class='media'>
+                  <div class='edit'><a href='/api/article/{{article._id}}/media/{{item.item_id._id}}/edit'><i class="fa fa-pencil-square-o"></i></a></div>
+                    <h1>{{item.item_id.title}}</h1>
+                    <img ng-src="/uploads/{{item.item_id.content}}"/>
+                  </div>
+                  <div class='paragraphe' ng-if="item.item_type == 'PARAGRAPHE'">
+                  <div class='edit'><a href='/api/article/{{article._id}}/paragraphe/{{item.item_id._id}}/edit'><i class="fa fa-pencil-square-o"></i></a></div>
+                    <h1>{{item.item_id.title}}</h1>
+                    <p ng-bind-html="item.item_id.content"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='col-md-3'>
+          <div class='panel'>
+            <div class='panel-body'>
+              <h4>Articles Items</h4>
+              <a href="/api/article/{{article._id}}/paragraphe" class="btn btn-primary m-t-10"><i class="fa fa-plus p-r-10"></i> Add paragraphe</a>
+              <a href="/api/article/{{article._id}}/media" class="btn btn-primary m-t-10" style="width:190px;"><i class="fa fa-plus p-r-10"></i> Add media</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

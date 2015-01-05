@@ -10,6 +10,7 @@ define [
     $scope.model =
       title: ""
       content: ""
+      illustration: ""
       published: false
     $scope.init = ()->
 
@@ -19,7 +20,8 @@ define [
         thumbnailHeight:150
         previewTemplate: "<div></div>"
         success:(file, data)->
-          console.log data
+          $scope.$apply ()->
+            $scope.model.illustration = data
           $("#dropFile").append("<img width='100%' height='400px' src='/uploads/#{data}'/>")
 
     $scope.init()
@@ -34,6 +36,7 @@ define [
           title: @model.title
           content: @model.content
           published: @model.published
+          illustration: @model.illustration
         success: (data)->
           $scope.$apply ()->
             $scope.errors = {}

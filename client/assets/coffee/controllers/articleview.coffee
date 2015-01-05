@@ -5,4 +5,11 @@ define [
   'directives/contentmenu'
 ], (app, $, _)->
   app.controller "ArticleView", ($scope, $window, $http, $routeParams, Model)->
-    console.log("articleview")
+    $scope.user = Model.data
+    $scope.init = ()->
+      $http.get("/api/secure/article/#{$routeParams.id}").success((data, status, headers, config) ->
+        console.log data
+        $scope.article = data
+      ).error (data, status, headers, config) ->
+        console.log data
+    $scope.init()
