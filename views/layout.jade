@@ -3,9 +3,23 @@ html
   head
     title= title
     block stylesheets
+      link(rel='stylesheet', href='/css/icons/font-awesome/css/font-awesome.min.css')
+      link(rel='stylesheet', href='/css/plugins/bootstrap/bootstrap.min.css')
+      link(rel='stylesheet', href='/css/plugins/plugins.css')
+      link(rel='stylesheet', href='/css/plugins/animate/animate.css')
+      link(rel='stylesheet', href='/css/style.css')
+      link(rel='stylesheet', href='/css/website.css')
+      link(rel='stylesheet', href='/css/icons/icons.min.css')
     block scripts
   body
-    block content
+    include website/header.jade
+
+    div#content
+      block content
+
+
+    script(type='text/javascript' href='/js/plugins/jquery/jquery-1.11.js')
+    script(type='text/javascript' href='/js/plugins/bootstrap/bootstrap.min.js')
 
 
 

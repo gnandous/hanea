@@ -63,12 +63,17 @@ module.exports = () ->
   APIRouter.post '/secure/article/file/post', controllers.API.user.article.file
   APIRouter.post '/secure/article/update/:id', controllers.API.user.article.update
 
+
   #handle users request
   APIRouter.post '/secure/user/:id/update', controllers.API.user.user.update
 
   #handle article paragraphe / media
   APIRouter.post '/secure/article/:id/paragraphe', controllers.API.user.articleParagraphe.create
+  APIRouter.post '/secure/paragraphe/:id', controllers.API.user.articleParagraphe.update
+  APIRouter.post '/secure/media/:id', controllers.API.user.articleMedia.update
   APIRouter.post '/secure/article/:id/media', controllers.API.user.articleMedia.create
+  APIRouter.get '/secure/paragraphe/:id', controllers.API.user.articleParagraphe.show
+  APIRouter.get '/secure/media/:id', controllers.API.user.articleMedia.show
 
   #APIRouter.get '/secure/', controllers.API.user.article.index
 

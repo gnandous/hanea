@@ -105,6 +105,18 @@ define [
       controllerUrl: "controllers/articleview"
       resolve:
         Model: _Ressources.Model
+    ).when("/api/paragraphe/:id/edit", angularAMD.route
+      templateUrl: '/../templates/editparagraphe.html'
+      controller: "EditParagraphe"
+      controllerUrl: "controllers/editparagraphe"
+      resolve:
+        Model: _Ressources.Model
+    ).when("/api/article/:id/media/:media_id/edit", angularAMD.route
+      templateUrl: '/../templates/editmedia.html'
+      controller: "EditMedia"
+      controllerUrl: "controllers/editmedia"
+      resolve:
+        Model: _Ressources.Model
     ).otherwise redirectTo: "/api"
     $locationProvider.html5Mode(true)
 

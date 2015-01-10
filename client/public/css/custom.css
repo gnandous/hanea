@@ -657,3 +657,10 @@ body{
   color: #0090D9;
   font-weight: bold;
 }
+
+/*** editmedia **/
+
+.prev-image img{
+  width: 100%;
+  height: auto;
+}

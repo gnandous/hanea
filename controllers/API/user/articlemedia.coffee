@@ -13,7 +13,7 @@ module.exports =
 
   create: (req, res, next)->
     if req.files.file?
-      ##TODO handle file transfert
+      ##TODO handle file transfert s3
       res.send req.files.file.name
     else
       articleMedia = new ArticleMedia
@@ -40,14 +40,10 @@ module.exports =
     condition =
       _id: req.params.id
     update = req.body
-    ArticleMedia.findOne condition, (err, article)->
-      if err
-        return res.status(400).send(err)
-      article = _.extend article, update
-      article.save (err, article)->
-        if err
-          return res.status(400).send(err)
-        return res.status(200).send(article)
+    ArticleMedia.findOneAndUpdate condition, update, (err, media)->
+      if err then return res.status(400).send(err)
+      return res.send media
+
 
   destroy: (req, res, next)->
     condition =

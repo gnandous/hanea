@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  section#section-1
+
+  h1= title
+  p ok to #{title}

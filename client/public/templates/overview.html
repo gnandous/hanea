@@ -19,7 +19,7 @@
                     <img ng-src="/uploads/{{item.item_id.content}}"/>
                   </div>
                   <div class='paragraphe' ng-if="item.item_type == 'PARAGRAPHE'">
-                  <div class='edit'><a href='/api/article/{{article._id}}/paragraphe/{{item.item_id._id}}/edit'><i class="fa fa-pencil-square-o"></i></a></div>
+                  <div class='edit'><a href='/api/paragraphe/{{item.item_id._id}}/edit'><i class="fa fa-pencil-square-o"></i></a></div>
                     <h1>{{item.item_id.title}}</h1>
                     <p ng-bind-html="item.item_id.content"></p>
                   </div>

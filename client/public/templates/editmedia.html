@@ -1,0 +1,47 @@
+<!-- include sidebar -->
+<div sidebarright></div>
+<div class='wrapper'>
+  <!-- include contentmenu -->
+  <div contentmenu></div>
+  <div class='container'>
+    <div id='main-content'>
+      <div class='row'>
+        <div class='col-md-8'>
+          <div class='panel'>
+            <div class='panel-body'>
+              <div id='message-stat' class=''>
+                <div ng-show="success"class="alert alert-success"role="alert">
+                  <strong>Item added!</strong> <a href="/api/articles">Article overview</a>.
+                </div>
+                <form role="form" id='addcontent'>
+                  <div class="form-group">
+                    <label class="form-label"><strong>Titre du media</strong></label>
+                    <div class="controls">
+                      <input type="text" class="form-control" name"title" ng-model="media.title">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class='form-label'><strong>Selectionner une image ou une vidéo </strong></label>
+                    <!--:: dropzone file -->
+                    <div class="dropzone" id="dropFile" style='margin-bottom:20px;'>
+                    </div>
+                    <!--:: end dropzone handling -->
+                  </div>
+                  <div class="form-group">
+                    <button ng-click="update()" class="contentsubmit">Enregistrer</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='col-md-4'>
+          <h1>Preview</h1>
+          <h4>{{media_to_edit.title}}</h4>
+          <div class="prev-image">
+            <img ng-src="/uploads/{{media_to_edit.content}}"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

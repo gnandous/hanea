@@ -3,6 +3,6 @@ websiteRouter = express.Router()
 
 module.exports = () ->
 	websiteRouter.get '/', (req, res, next)->
-		return res.render 'index',
+		return res.render 'website/home/home',
       title: 'Hello'
   return websiteRouter

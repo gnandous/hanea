@@ -1,0 +1,110 @@
+/*** logo ***/
+#logo{
+  /*
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  z-index: 10000;
+  top: 0px;
+  right: 50%;
+  margin-right: -47px;
+  background-image: url(/images/logo2.png);
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  */
+}
+
+
+/** header ***/
+
+
+header .navbar{
+  background-color: #a57a3c;
+}
+.navbar-default .navbar-nav > li{
+  cursor: pointer;
+}
+.navbar-default .navbar-nav > li > a{
+  color: white;
+}
+.navbar-default .navbar-nav > li > a:hover{
+  color: white;
+}
+.navbar-nav > li > a{
+  padding: 16px;
+}
+.navbar-nav > li:hover{
+  background-color: #8c6835;
+}
+/*** font *****/
+
+
+@font-face {
+    font-family: RileysonParent;
+    src: url(/fonts/Rileyson-Rg-Parent.ttf);
+}
+
+@font-face {font-family: 'PtSans';font-style: normal;font-weight: 400;src: local('Pt sans'), local('Pt sans'), url(/fonts/Pt-sans.ttf) format('ttf');}
+
+/*** website ***/
+
+h1, h2, h3,
+h4, h5, h6{
+  font-family: RileysonParent, Gothic, verdana, arial;
+}
+
+body{
+  font-family: 'PtSans', arial, verdana;
+  background-color: white;
+}
+/*** section 1 ****/
+
+#section-1{
+  position: relative;
+  min-height: 500px;
+  background: url(/images/test2.jpg)no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#section-1 .content{
+  padding-top: 20px;
+  padding-left: 39px;
+  width: 1200px;
+  margin: auto;
+  color: white;
+  text-align: left;
+}
+#section-1 .content h1{
+  font-size: 63px;
+  width: 66%;
+  /*margin-left: 150px;*/
+}
+#section-1 .content p{
+  display: block;
+  /*margin-left: 150px;*/
+  width: 100%;
+  font-size: 30px;
+}
+#section-1 .content button{
+  width: 300px;
+  /*margin-left: 150px;*/
+  height: 50px;
+  border-radius: 14px;
+  font-size: 18px;
+}
+#section-1 .content .btn-primary{
+  background-color: #1ABC9C;
+  border: none;
+}
+#section-1 .content .btn-primary.next{
+  background-color: transparent;
+  font-size: 72px;
+  width: 100px;
+  height: 90px;
+  border-radius: 100px;
+  position: absolute;
+  top: 354px;
+  margin-left: 223px;
+}

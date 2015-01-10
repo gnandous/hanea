@@ -35,15 +35,10 @@ module.exports =
     condition =
       _id: req.params.id
     update = req.body
-    ArticleParagraphe.findOne condition, (err, article)->
+    ArticleParagraphe.findOneAndUpdate condition, update, (err, paragraphe)->
       if err
         return res.status(400).send(err)
-      article = _.extend article, update
-      article.save (err, article)->
-        if err
-          return res.status(400).send(err)
-        return res.status(200).send(article)
-
+      return res.status(200).send(paragraphe)
   destroy: (req, res, next)->
     condition =
       _id: req.params.id

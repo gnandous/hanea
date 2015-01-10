@@ -14,6 +14,10 @@ ArticleMediaSchema = new Schema
 
 ## After create, generate item
 
+ArticleMediaSchema.pre 'save', (next)->
+  ##TODO Send to amazone s3 and next
+  next()
+
 ArticleMediaSchema.post 'save', (media)->
   ## create article item
   article_item = new ArticleItem
