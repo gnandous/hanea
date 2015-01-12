@@ -21,6 +21,13 @@
         resolve: {
           Model: _Ressources.Model
         }
+      })).when("/api/page/new", angularAMD.route({
+        templateUrl: '/../templates/addpage.html',
+        controller: "AddPage",
+        controllerUrl: "controllers/addpage",
+        resolve: {
+          Model: _Ressources.Model
+        }
       })).when("/api/contenu/add", angularAMD.route({
         templateUrl: '/../templates/addcontent.html',
         controller: "contenus",

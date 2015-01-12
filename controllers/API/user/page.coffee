@@ -12,7 +12,9 @@ module.exports =
       return res.status(200).send(articleMedias)
 
   create: (req, res, next)->
-    page = new page req.body
+    page = new Page
+      title: req.body.title
+      content: req.body.content
     page.save (err, page)->
       if err then return res.status(400).send(err)
       return res.status(200).send(page)

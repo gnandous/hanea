@@ -9,4 +9,6 @@ PageSchema = new Schema
   content:
     type: String
     required: true
+  slug:
+    type: String
 module.exports = Page = mongoose.model 'Page', PageSchema

@@ -11,3 +11,4 @@ module.exports =
   user: require './user'
   articleParagraphe : require './articleParagraphe'
   articleMedia: require './articleMedia'
+  page: require './page'

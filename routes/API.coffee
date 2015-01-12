@@ -77,6 +77,10 @@ module.exports = () ->
 
   #APIRouter.get '/secure/', controllers.API.user.article.index
 
+  #handle pages request
+  APIRouter.post '/secure/page', controllers.API.user.page.create
+  APIRouter.get  '/secure/pages', controllers.API.user.page.index
+
 
   APIRouter.get '/*', controllers.API.user.welcome
   #APIRouter.get '/*', badRequest

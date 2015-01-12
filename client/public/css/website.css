@@ -71,11 +71,14 @@ section .content{
 #section-1{
   position: relative;
   min-height: 500px;
-  background: url(/images/test2.jpg)no-repeat center fixed;
+  background: transparent;
+  /*
+    background: url(/images/test2.jpg)no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  */
 }
 #section-1 .content{
   padding-top: 20px;
@@ -120,11 +123,14 @@ section .content{
 
 /*** section 2 *****/
 #section-3{
+  /*
   background: url(/images/section-3bckg.jpg)no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  */
+  background: transparent;
   min-height: 500px;
 }
 #section-2{
