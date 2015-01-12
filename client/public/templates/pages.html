@@ -1,0 +1,22 @@
+<!-- include sidebar -->
+<div sidebarright></div>
+<div class='wrapper'>
+  <!-- include contentmenu -->
+  <div contentmenu></div>
+  <div class='container'>
+    <div ng-show='loadingView' class="loader"></div>
+    <div id='main-content'>
+      <div class='row'>
+      <!-- repeat this file -->
+        <div class='col-lg-4' ng-repeat='page in pages'>
+          <div class='content-type panel page-list'>
+            <h3>{{page.title}}</h3>
+            <p>{{page.content | limitTo: 50}}</p>
+            <a class= 'btn page-edit-button' href="/api/page/new">Edit</a>
+          </div>
+        </div>
+      <!-- end -->
+      </div>
+    </div>
+  </div>
+</div>

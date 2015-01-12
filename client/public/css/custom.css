@@ -664,3 +664,18 @@ body{
   width: 100%;
   height: auto;
 }
+
+/*** page edit button **/
+.page-list h3{
+  color: #1ABC9C;
+}
+.page-list a{
+  display: block;
+  margin: auto;
+  background-color: #1ABC9C !important;
+}
+.page-edit-button{
+  padding: 10px 10px;
+  border: none;
+  color: white !important;
+}

@@ -174,22 +174,3 @@ section .content{
   margin: 19px 0px;
   margin-left: -76px
 }
-#section-2 .content .row .itm .block-icon{
-  width: 150px;
-  height: 150px;
-  background: #1ABC9C;
-  border-radius: 80px;
-  padding: 31px 0px;
-  color: white;
-  font-size: 59px;
-}
-#section-2 .content #doms div{
-  /*
-  float: left;
-  margin-right: 50px;
-  padding: 25px 12px;
-  width: 300px;
-  height: 100px;
-  background-color: #c00;
-  */
-}
