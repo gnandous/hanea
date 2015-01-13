@@ -28,6 +28,13 @@
         resolve: {
           Model: _Ressources.Model
         }
+      })).when("/api/page/:id/edit", angularAMD.route({
+        templateUrl: '/../templates/editpage.html',
+        controller: "EditPage",
+        controllerUrl: "controllers/editpage",
+        resolve: {
+          Model: _Ressources.Model
+        }
       })).when("/api/page/new", angularAMD.route({
         templateUrl: '/../templates/addpage.html',
         controller: "AddPage",

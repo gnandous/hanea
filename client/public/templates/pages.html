@@ -8,11 +8,11 @@
     <div id='main-content'>
       <div class='row'>
       <!-- repeat this file -->
-        <div class='col-lg-4' ng-repeat='page in pages'>
-          <div class='content-type panel page-list'>
-            <h3>{{page.title}}</h3>
-            <p>{{page.content | limitTo: 50}}</p>
-            <a class= 'btn page-edit-button' href="/api/page/new">Edit</a>
+        <div class='col-lg-4 pagecell' ng-repeat='page in pages'>
+          <div class='content-type panel page-list' styles="min-height:100px;" data-element="{{page._id}}">
+            <h3>{{page.title | limitTo : 50}} ... </h3>
+            <a class= 'btn page-edit-button' href="/api/page/{{page._id}}/edit">Edit</a>
+            <p ng-click='remove(page._id)'class='page-delete'><i class="fa fa-trash-o"></i></p>
           </div>
         </div>
       <!-- end -->

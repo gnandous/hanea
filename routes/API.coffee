@@ -79,6 +79,9 @@ module.exports = () ->
 
   #handle pages request
   APIRouter.post '/secure/page', controllers.API.user.page.create
+  APIRouter.post '/secure/page/:id', controllers.API.user.page.update
+  APIRouter.get  '/secure/page/:id', controllers.API.user.page.show
+  APIRouter.get  '/secure/page/:id/remove', controllers.API.user.page.destroy
   APIRouter.get  '/secure/pages', controllers.API.user.page.index
 
 

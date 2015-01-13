@@ -174,3 +174,11 @@ section .content{
   margin: 19px 0px;
   margin-left: -76px
 }
+.pagecell{
+  min-height: 300px;
+}
+.page-list{
+}
+.page-delete i{
+   font-size: 20px;
+}

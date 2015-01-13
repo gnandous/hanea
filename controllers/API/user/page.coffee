@@ -6,6 +6,8 @@ Page = require '../../../models/Page'
 module.exports =
   index: (req, res, next)->
     Page.find()
+    .sort
+      date: -1
     .limit(20).exec (err, articleMedias)->
       if err
         next(err)

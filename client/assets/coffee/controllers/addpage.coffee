@@ -3,7 +3,7 @@ define [
   'services/authentication'
   'directives/contentmenu'
 ], (app) ->
-  app.controller "AddPage", ($scope, $window, AuthenticationService, $http, $routeParams, Model)->
+  app.controller "AddPage", ($scope, $window, AuthenticationService, $http, $routeParams,$location, Model)->
     $scope.init = (->
       $scope.user = Model.data
       $scope.title = ""
@@ -26,17 +26,13 @@ define [
     $scope.create = ()->
       unless @validate()
         return null
-      $.ajax
-        #url: "/api/secure/article/update/#{$routeParams.id}"
-        url : "/api/secure/page"
-        type: 'POST'
-        data:
-          title: $scope.title
-          content: $scope.content
-        success: (data)->
-          $scope.$apply ()->
-            $scope.success = true
-          console.log data
-        error: (jqXHR, textStatus, errorThrown)->
-          console.log jqXHR.status
+      $scope.model =
+        title: $scope.title
+        content: $scope.content
+      $http.post("/api/secure/page", $scope.model).success((data, status, headers, config) ->
+        $scope.resErr = false
+        $location.path "/api/pages"
+        return
+      ).error (data, status, headers, config) ->
+        console.log status
 

@@ -282,7 +282,7 @@ body{
   padding: 0px 40px;
   padding-bottom: 20px;
   font-size: 13px;
-  height: 150px;
+  min-height: 150px;
 
 }
 
@@ -667,15 +667,26 @@ body{
 
 /*** page edit button **/
 .page-list h3{
-  color: #1ABC9C;
+  padding-bottom: 11px;
+  margin-bottom: 14px;
+  border-bottom: solid #d4d4d4 1px;
 }
 .page-list a{
   display: block;
   margin: auto;
-  background-color: #1ABC9C !important;
+  background-color: #bd9862 !important;
 }
 .page-edit-button{
   padding: 10px 10px;
   border: none;
   color: white !important;
 }
+.page-delete{
+  cursor: pointer;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px !important;
+  color: white !important;
+  background: transparent !important;
+}
+
