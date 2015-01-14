@@ -15,6 +15,9 @@ define [
     )()
     $scope.remove = (id)->
       $("div[data-element=#{id}]").parent().hide 'slow', ()->
-        console.log "item Hidded"
+        $http.get("/api/secure/page/#{id}/remove").success((data, status, headers, config) ->
+          $scope.pages = data
+        ).error (data, status, headers, config) ->
+          console.log status
 
       return 1

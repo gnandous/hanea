@@ -29,10 +29,9 @@
         };
         return $http.post("/api/secure/page", $scope.model).success(function(data, status, headers, config) {
           $scope.resErr = false;
-          console.log(data);
           $location.path("/api/pages");
         }).error(function(data, status, headers, config) {
-          return console.log(status);
+          return console.log(config);
         });
       };
     });

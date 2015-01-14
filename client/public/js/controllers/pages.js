@@ -13,7 +13,11 @@
       })();
       return $scope.remove = function(id) {
         $("div[data-element=" + id + "]").parent().hide('slow', function() {
-          return console.log("item Hidded");
+          return $http.get("/api/secure/page/" + id + "/remove").success(function(data, status, headers, config) {
+            return $scope.pages = data;
+          }).error(function(data, status, headers, config) {
+            return console.log(status);
+          });
         });
         return 1;
       };
