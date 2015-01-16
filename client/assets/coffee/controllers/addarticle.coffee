@@ -7,12 +7,34 @@ define [
 ], (app, $, _)->
   app.controller "addarticle", ($scope, $window, $http, Model)->
     $scope.user = Model.data
+    $scope.Category = {}
+    $scope.Category.list = {}
     $scope.model =
       title: ""
       content: ""
       illustration: ""
       published: false
+      categories: []
+
+    $scope.addCategory = (index) ->
+      name = @Category.list[index].name
+      if @model.categories.indexOf(name) is -1
+        @model.categories.push name
+      else
+        @removeCategoryFromModel name
+    $scope.removeCategoryFromModel = (name) ->
+      @model.categories.splice @model.categories.indexOf(name), 1
+
+    $scope.loadCategories = ->
+      $http.get("/api/secure/categories").success((data, status, headers, config) ->
+        $scope.Category.list = data
+      ).error (data, status, headers, config) ->
+        console.log status
+
     $scope.init = ()->
+
+      @loadCategories()
+
 
       $("#dropFile").dropzone
         url: "/api/secure/article/file/post"
@@ -25,6 +47,15 @@ define [
           $("#dropFile").append("<img width='100%' height='400px' src='/uploads/#{data}'/>")
 
     $scope.init()
+
+    $scope.createCategory = (Category)->
+      unless @Category.new
+        return
+      $http.post("/api/secure/category", $scope.Category.new).success((data, status, headers, config) ->
+        $scope.Category.list.push data
+      ).error (data, status, headers, config) ->
+        console.log status
+
     $scope.insertmedia = ->
 
     $scope.create = ->

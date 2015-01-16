@@ -27,6 +27,7 @@ header .navbar{
 .navbar-default .navbar-nav > li > a{
   color: white;
 }
+
 .navbar-default .navbar-nav > li > a:hover{
   color: white;
 }
@@ -181,4 +182,7 @@ section .content{
 }
 .page-delete i{
    font-size: 20px;
+}
+.articlesCategories{
+  overflow: scroll;
 }

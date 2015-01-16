@@ -31,7 +31,7 @@
           $scope.resErr = false;
           $location.path("/api/pages");
         }).error(function(data, status, headers, config) {
-          return console.log(config);
+          return console.log(status);
         });
       };
     });

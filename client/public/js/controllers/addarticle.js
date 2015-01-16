@@ -2,13 +2,36 @@
   define(['app', 'jquery', 'dropzone', 'underscore', 'directives/contentmenu'], function(app, $, _) {
     return app.controller("addarticle", function($scope, $window, $http, Model) {
       $scope.user = Model.data;
+      $scope.Category = {};
+      $scope.Category.list = {};
       $scope.model = {
         title: "",
         content: "",
         illustration: "",
-        published: false
+        published: false,
+        categories: []
+      };
+      $scope.addCategory = function(index) {
+        var name;
+        name = this.Category.list[index].name;
+        if (this.model.categories.indexOf(name) === -1) {
+          return this.model.categories.push(name);
+        } else {
+          return this.removeCategoryFromModel(name);
+        }
+      };
+      $scope.removeCategoryFromModel = function(name) {
+        return this.model.categories.splice(this.model.categories.indexOf(name), 1);
+      };
+      $scope.loadCategories = function() {
+        return $http.get("/api/secure/categories").success(function(data, status, headers, config) {
+          return $scope.Category.list = data;
+        }).error(function(data, status, headers, config) {
+          return console.log(status);
+        });
       };
       $scope.init = function() {
+        this.loadCategories();
         return $("#dropFile").dropzone({
           url: "/api/secure/article/file/post",
           thumbnailWidth: 250,
@@ -23,6 +46,16 @@
         });
       };
       $scope.init();
+      $scope.createCategory = function(Category) {
+        if (!this.Category["new"]) {
+          return;
+        }
+        return $http.post("/api/secure/category", $scope.Category["new"]).success(function(data, status, headers, config) {
+          return $scope.Category.list.push(data);
+        }).error(function(data, status, headers, config) {
+          return console.log(status);
+        });
+      };
       $scope.insertmedia = function() {};
       return $scope.create = function() {
         console.log(this.model.published);

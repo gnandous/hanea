@@ -84,6 +84,11 @@ module.exports = () ->
   APIRouter.get  '/secure/page/:id/remove', controllers.API.user.page.destroy
   APIRouter.get  '/secure/pages', controllers.API.user.page.index
 
+  #handle categories request
+  APIRouter.post '/secure/category', controllers.API.user.category.create
+  APIRouter.get  '/secure/categories', controllers.API.user.category.index
+  APIRouter.get  '/secure/category/:id/remove', controllers.API.user.category.destroy
+
 
   APIRouter.get '/*', controllers.API.user.welcome
   #APIRouter.get '/*', badRequest

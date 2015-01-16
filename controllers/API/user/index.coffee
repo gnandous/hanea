@@ -12,3 +12,4 @@ module.exports =
   articleParagraphe : require './articleParagraphe'
   articleMedia: require './articleMedia'
   page: require './page'
+  category: require './category'

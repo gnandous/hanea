@@ -12,7 +12,7 @@ module.exports =
       return res.status(200).send(articleMedias)
 
   create: (req, res, next)->
-    category = new category req.body
+    category = new Category req.body
     category.save (err, category)->
       if err then return res.status(400).send(err)
       return res.status(200).send(category)
