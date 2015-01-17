@@ -50,6 +50,7 @@ module.exports = () ->
   APIRouter.post '/secure/staff', controllers.API.user.staff.create
   APIRouter.get '/secure/staffs', controllers.API.user.staff.index
   APIRouter.get '/secure/staff/show/:id', controllers.API.user.staff.show
+  APIRouter.get '/secure/staff/remove/:id', controllers.API.user.staff.destroy
   APIRouter.post '/secure/staff/update/:id', controllers.API.user.staff.update
   APIRouter.post '/secure/content/update/:id', controllers.API.user.content.update
   APIRouter.get '/secure/content/remove/:id', controllers.API.user.content.delete

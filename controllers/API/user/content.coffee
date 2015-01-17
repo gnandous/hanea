@@ -89,8 +89,11 @@ module.exports =
       update.title = req.body.title
     if req.body.subtitle?
       update.subtitle = req.body.subtitle
+    if req.body.content?
+      update.content = req.body.content
     if req.body.published?
       update.published = req.body.published
+
 
     Content.findOneAndUpdate condition, update, (err, content)->
       if err then return res.status(400).send(err)

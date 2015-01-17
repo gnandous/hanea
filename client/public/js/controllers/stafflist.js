@@ -9,7 +9,15 @@
           return console.log(status);
         });
       };
-      return $scope.init();
+      $scope.init();
+      return $scope.remove = function(id) {
+        $("div[data-element=" + id + "]").parent().hide('slow', function() {});
+        return $http.get("/api/secure/staff/remove/" + id).success(function(data, status, headers, config) {
+          return console.log(data);
+        }).error(function(data, status, headers, config) {
+          return console.log(status);
+        });
+      };
     });
   });
 

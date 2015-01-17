@@ -5,13 +5,14 @@
         location: $("#addcontent").find("#location"),
         title: $("#addcontent").find("#title"),
         subtitle: $("#addcontent").find("#subtitle"),
-        content: $("#addcontent").find("#content").find('.form-control'),
+        content: "",
         publication: $("#addcontent").find("#published")
       };
       $scope.init = function() {
         $scope.user = Model.data;
         return $http.get("/api/secure/content/detail/" + $routeParams.id).success(function(data, status, headers, config) {
-          return $scope.model = data;
+          $scope.model = data;
+          return $scope.inputs.content = data.content;
         }).error(function(data, status, headers, config) {
           return console.log(status);
         });
@@ -33,7 +34,7 @@
             location: $scope.inputs.location.val(),
             title: $scope.inputs.title.val(),
             subtitle: $scope.inputs.subtitle.val(),
-            content: $scope.content,
+            content: $scope.inputs.content,
             published: $scope.inputs.publication.is(':checked')
           },
           success: function(data) {

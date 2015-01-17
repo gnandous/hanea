@@ -271,7 +271,7 @@ body{
   padding-left: 15px;
 }
 .content-menu .navbar .navbar-nav li a:hover{
-  color: #333 !important;
+  color: white !important;
 }
 .page-contenus .container{
   /*margin: 0px 42px;*/
@@ -689,4 +689,16 @@ body{
   color: white !important;
   background: transparent !important;
 }
+.admin-menu ul li{
+  cursor: pointer;
+}
+.admin-menu ul li:hover{
+  background-color: #134da5 !important;
+}
 
+.admin-menu ul li a{
+  padding-right: 20px;
+}
+.admin-menu ul li a:hover{
+  color: white !important;
+}

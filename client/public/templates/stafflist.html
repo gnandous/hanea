@@ -8,7 +8,7 @@
     <div id='main-content'>
       <div class="row stafflist">
         <div class="col-lg-3" ng-repeat='staff in stafflist'>
-          <div class='panel staff-element' ng-mouseover="mouseon()">
+          <div class='panel staff-element' ng-mouseover="mouseon()" data-element="{{staff._id}}">
             <div class='staff-illustration' style="background-image:url({{staff.avatar}});">
               <div class='overlay'></div>
             </div>
@@ -17,7 +17,7 @@
               <h3>{{staff.lastname}}</h3>
             </div>
             <div class='thumbnails-actions'>
-              <a href="/api/staff/edit/{{staff._id}}"><i class="fa fa-trash-o fa-3x"></i></a>
+              <a ng-click='remove(staff._id)'><i class="fa fa-trash-o fa-3x"></i></a>
               <a href="/api/staff/edit/{{staff._id}}"><i class="fa fa-pencil-square-o fa-3x"></i></a>
             </div>
           </div>

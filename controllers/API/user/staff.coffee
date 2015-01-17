@@ -3,7 +3,7 @@ randomToken = require 'random-token'
 _ = require 'underscore'
 config = require '../../../config'
 Staff = require '../../../models/staff'
-
+AWS = require '../../../libs/aws'
 sendToAmazon = (s3_object_type, s3_object_name, callback) ->
   aws.config.update
     accessKeyId: config.aws.AWS_ACCESS_KEY
@@ -57,6 +57,20 @@ module.exports =
         if err
           return res.status(400).send(err)
         return res.status(200).send(member)
+
+  destroy: (req, res, next)->
+    str = "https://hanea-assets.s3.amazonaws.com/"
+    condition =
+      _id: req.params.id
+    #Staff.findOneAndRemove condition,
+    Staff.findOneAndRemove condition, (err, staff)->
+      if err
+        return res.status(400).send(err)
+      distPath = staff.avatar.slice(str.length)
+      console.log distPath
+      AWS.destroy distPath, (err, data)->
+        if err then res.status(404).send(err)
+        res.send 200
 
   ## send files direct to amazon and return url access
   mys3: (req, res, next) ->

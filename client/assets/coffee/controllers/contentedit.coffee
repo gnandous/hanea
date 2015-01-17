@@ -9,13 +9,14 @@ define [
       location : $("#addcontent").find("#location")
       title : $("#addcontent").find("#title")
       subtitle : $("#addcontent").find("#subtitle")
-      content : $("#addcontent").find("#content").find('.form-control')
+      content : ""
       publication : $("#addcontent").find("#published")
 
     $scope.init = ()->
       $scope.user = Model.data
       $http.get("/api/secure/content/detail/#{$routeParams.id}").success((data, status, headers, config) ->
         $scope.model = data
+        $scope.inputs.content = data.content
       ).error (data, status, headers, config) ->
         console.log status
     $scope.change = (event)->
@@ -33,7 +34,7 @@ define [
           location : $scope.inputs.location.val()
           title : $scope.inputs.title.val()
           subtitle : $scope.inputs.subtitle.val()
-          content : $scope.content
+          content :  $scope.inputs.content
           published : $scope.inputs.publication.is(':checked')
         success: (data)->
           $(".message .alert").html("<i class='fa fa-check'></i> Your post has been Updated succesfully. Thank You. <strong> <a href='/api/articles'>See content</a></strong>")
