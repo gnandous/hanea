@@ -38,11 +38,10 @@ define [
           return
 
         onFinishS3Put: (public_url) =>
-          status_elem.innerHTML = "Upload completed. Uploaded to: " + public_url
           img = "<img src='#{public_url}' width='150' height='150' id='avatar_preview' />"
           $("#preview").html(img)
           #$("input[name='avatar']").val(public_url)
-          $("#avatar_url").val(public_url)
+          #$("#avatar_url").val(public_url)
           $scope.user.avatar = public_url
           return
 

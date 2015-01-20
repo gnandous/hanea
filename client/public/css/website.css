@@ -186,3 +186,31 @@ section .content{
 .articlesCategories{
   overflow: scroll;
 }
+
+#section-4{
+  background: transparent;
+  height: 300px;
+  margin-bottom: 30px;
+}
+#section-4 p{
+  font-size: 19px;
+
+}
+#section-4 .container{
+  margin: auto;
+  text-align: center;
+}
+#section-4 .partner-logo.aiea{
+  width: 100%;
+  min-height: 240px;
+  background-image: url(/images/logo-aiea.jpg);
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+}
+#section-4 .partner-logo.niger-rpb{
+  width: 100%;
+  min-height: 230px;
+  background-image: url(/images/armoiries.png);
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+}

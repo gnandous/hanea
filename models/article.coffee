@@ -19,6 +19,9 @@ Article = new Schema
     type: String
   illustration:
     type: String
+  categories: [
+    type: String
+  ]
 
 Article.path('title').required(true, 'Title is required')
 

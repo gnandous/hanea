@@ -19,6 +19,7 @@ module.exports =
       title: req.body.title
       content: req.body.content
       illustrator: req.body.illustration
+      categories: req.body.categories
     article.save (err, article)->
       if err
         return res.status(400).send(err)

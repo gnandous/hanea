@@ -1,11 +1,35 @@
 (function() {
-  define(['app', 'services/authentication', 'directives/contentmenu'], function(app) {
+  define(['app', '', 'dropzone', 'services/authentication', 'directives/contentmenu'], function(app) {
     return app.controller("AddPage", function($scope, $window, AuthenticationService, $http, $routeParams, $location, Model) {
       $scope.init = (function() {
         $scope.user = Model.data;
+        $scope.addpageloader = true;
+        $scope.addpageloadertxt = true;
+        $scope.media = "";
         $scope.title = "";
-        return $scope.content = "";
+        $scope.content = "";
+        $scope.options = {
+          language: 'en',
+          allowedContent: true,
+          entities: false
+        };
+        return $("#dropFile").dropzone({
+          url: "/api/secure/page/file",
+          thumbnailWidth: 250,
+          thumbnailHeight: 150,
+          previewTemplate: "<div></div>",
+          success: function(file, data) {
+            $scope.$apply(function() {
+              $scope.media = data.path;
+              return $scope.medianame = data.name;
+            });
+            return $("#dropFile").append("<img width='100%' height='400px' src='/uploads/" + data.name + "'/>");
+          }
+        });
       })();
+      $scope.uploadarea = function() {
+        return $(".ta-text").focus();
+      };
       $scope.validate = function() {
         if (!this.content) {
           this.error = true;
@@ -23,9 +47,13 @@
         if (!this.validate()) {
           return null;
         }
+        $scope.addpageloader = false;
+        $scope.addpageloadertxt = false;
         $scope.model = {
           title: $scope.title,
-          content: $scope.content
+          content: $scope.content,
+          media: $scope.media,
+          medianame: $scope.medianame
         };
         return $http.post("/api/secure/page", $scope.model).success(function(data, status, headers, config) {
           $scope.resErr = false;

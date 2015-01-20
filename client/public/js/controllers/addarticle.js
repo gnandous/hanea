@@ -58,7 +58,6 @@
       };
       $scope.insertmedia = function() {};
       return $scope.create = function() {
-        console.log(this.model.published);
         return $.ajax({
           url: '/api/secure/article',
           type: 'POST',
@@ -66,7 +65,8 @@
             title: this.model.title,
             content: this.model.content,
             published: this.model.published,
-            illustration: this.model.illustration
+            illustration: this.model.illustration,
+            categories: JSON.stringify(this.model.categories)
           },
           success: function(data) {
             $scope.$apply(function() {

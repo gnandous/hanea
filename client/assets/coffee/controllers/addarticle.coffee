@@ -59,7 +59,6 @@ define [
     $scope.insertmedia = ->
 
     $scope.create = ->
-      console.log @model.published
       $.ajax
         url: '/api/secure/article'
         type: 'POST'
@@ -68,6 +67,7 @@ define [
           content: @model.content
           published: @model.published
           illustration: @model.illustration
+          categories: JSON.stringify @model.categories
         success: (data)->
           $scope.$apply ()->
             $scope.errors = {}
