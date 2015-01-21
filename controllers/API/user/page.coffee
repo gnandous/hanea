@@ -79,7 +79,6 @@ module.exports =
         if err then return res.status(400).send(err)
         return res.send media
 
-
   destroy: (req, res, next)->
     str = "https://hanea-assets.s3.amazonaws.com/"
 
@@ -103,4 +102,11 @@ module.exports =
     if req.files.file? then return res.status(200).send(req.files.file)
     else
       return res.status(400)
+
+  findBySlug: (req, res, next)->
+    if req.page?
+      return res.render 'website/pages/page-layout--tpl',
+        page: req.page
+    else
+      next()
 

@@ -12,6 +12,8 @@
           </div>
           <form id='addcontent'>
              <div class="form-group">
+              <p>Page Url is :</p>
+              <h3 class='page-slug-overview'>{{model.slug}}</h3>
               <label class='form-label'><h1>Clique to edit.</h1></label>
               <!--:: dropzone file -->
               <div class="dropzone editdrop" id="dropFile" style='margin-bottom:20px;'>
@@ -30,7 +32,7 @@
               <label class="form-label">Content </label><span class="asterisk">*</span>
               <span class="tips">Set the content of your post</span>
               <div class="controls">
-                <text-angular ta-toolbar="[['h1','h2','h3'],['bold','italics'], ['justifyLeft','justifyCenter','justifyRight', 'ul', 'ol']]" class='ta-editor' id="content"  ng-model="model.content"></text-angular>
+                <text-angular ta-toolbar="[['h1','h2','h3'],['bold','italics'], ['justifyLeft','justifyCenter','justifyRight', 'clear', 'ul', 'ol']]" class='ta-editor' id="content"  ng-model="model.content"></text-angular>
                 <!--
                 <textarea ng-change='change()' ng-model='content' id="content" class='form-control' name="content"></textarea>
                 -->

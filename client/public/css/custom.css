@@ -733,3 +733,8 @@ body{
 .dropzone .prev-im{
   pointer-events: none;
 }
+.page-slug-overview{
+  margin: 0px 0px;
+  padding: 5px 5px;
+  background-color: #d4d4d4;
+}

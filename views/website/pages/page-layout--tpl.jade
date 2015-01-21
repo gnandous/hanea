@@ -1,0 +1,9 @@
+extends ../../layout
+
+block content
+  block banner
+    include page-banner--tpl.jade
+  block page-content
+    .container
+      p
+        | !{page.content}

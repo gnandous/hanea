@@ -89,6 +89,9 @@ section .content{
   color: white;
   text-align: left;
 }
+#section-1 a{
+  color: white;
+}
 #section-1 .content h1{
   font-size: 63px;
   width: 66%;
@@ -213,4 +216,35 @@ section .content{
   background-image: url(/images/armoiries.png);
   -webkit-background-size: 100% auto;
   -moz-background-size: 100% auto;
+}
+#section-5{
+  background: transparent;
+  height: 500px;
+  margin-top: 182px;
+}
+
+/********** PAGES LAYOUT ***********/
+#page-banner-container{
+  position: relative;
+}
+#page-banner-container .page-banner{
+  margin: auto;
+  overflow: hidden;
+  min-height: 500px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+#page-banner-container .grid-page-infos{
+  padding: 10px 30px;
+  width: 1100px;
+  min-height: 200px;
+  background: url(/images/grid-page-transparent.png) repeat-x;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -594px;
+}
+#page-banner-container .grid-page-infos h1{
+  margin: 50px 0px;
+  color: #900;
 }

@@ -34,7 +34,7 @@
                     <label class="form-label">Content </label><span class="asterisk">*</span>
                     <span class="tips">Set the content of your post</span>
                     <div class="controls">
-                      <text-angular ta-toolbar="[['bold','italics','insertLink']]" class='ta-editor' id="content"  ng-model="model.content"></text-angular>
+                      <text-angular ta-toolbar="[['bold','italics','insertLink', 'clear']]" class='ta-editor' id="content"  ng-model="model.content"></text-angular>
                       <!--
                       <textarea ng-change='change()' ng-model='content' id="content" class='form-control' name="content"></textarea>
                       -->
@@ -75,6 +75,7 @@
               <form ng-submit='createCategory(Category)' class="form-inline">
                 <input ng-model="Category.new.name" class="pickadate form-control picker__input" type="text">
               </form>
+              <p><small>Press Enter to create</small></p>
             </div>
           </div>
         </div>

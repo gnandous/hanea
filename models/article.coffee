@@ -1,6 +1,7 @@
+ArticleItem = require './articleitem'
+Slug = require '../libs/slug'
 mongoose = require 'mongoose'
 Schema = mongoose.Schema
-ArticleItem = require './articleitem'
 
 Article = new Schema
   date:
@@ -16,6 +17,8 @@ Article = new Schema
   title:
     type: String
   content:
+    type: String
+  slug:
     type: String
   illustration:
     type: String
