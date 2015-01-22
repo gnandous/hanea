@@ -9,6 +9,7 @@
     "start": "nodemon --ignore client/ -e js,coffee server.js"
   },
   "dependencies": {
+    "async": "^0.9.0",
     "aws-sdk": "^2.0.23",
     "bcrypt": "0.7.8",
     "body-parser": "~1.8.1",

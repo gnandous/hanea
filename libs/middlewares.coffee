@@ -1,6 +1,6 @@
-Page = require '../models/Page'
 Article = require '../models/article'
-
+Page = require '../models/Page'
+async = require 'async'
 
 module.exports =
   findBySlug: (req, res, next, slug)->

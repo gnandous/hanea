@@ -17,15 +17,22 @@
 
 /** header ***/
 
-
+body{
+  margin-top: 0px;
+}
 header .navbar{
+  /*
   background-color: #a57a3c;
+  background: transparent;
+  */
+  background-color: rgba(165, 122, 60, 0.0);
 }
 .navbar-default .navbar-nav > li{
   cursor: pointer;
 }
 .navbar-default .navbar-nav > li > a{
   color: white;
+  font-size: 17px;
 }
 
 .navbar-default .navbar-nav > li > a:hover{
@@ -55,7 +62,7 @@ h4, h5, h6{
 }
 
 body{
-  font-family: 'PtSans', arial, verdana;
+  /*font-family: 'PtSans', arial, verdana;*/
   background-color: white;
 }
 /*** section 1 ****/
@@ -82,7 +89,7 @@ section .content{
   */
 }
 #section-1 .content{
-  padding-top: 20px;
+  padding-top: 100px;
   padding-left: 39px;
   width: 1200px;
   margin: auto;
