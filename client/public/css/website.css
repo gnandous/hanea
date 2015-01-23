@@ -19,6 +19,7 @@
 
 body{
   margin-top: 0px;
+  -webkit-font-smoothing: antialiased;
 }
 header .navbar{
   /*
@@ -47,23 +48,39 @@ header .navbar{
 /*** font *****/
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:Condensed);
 
 @font-face {
     font-family: RileysonParent;
     src: url(/fonts/Rileyson-Rg-Parent.ttf);
 }
-
 @font-face {font-family: 'PtSans';font-style: normal;font-weight: 400;src: local('Pt sans'), local('Pt sans'), url(/fonts/Pt-sans.ttf) format('ttf');}
-
+@font-face {
+    font-family: "Opensanscondlight";
+    src: url('/fonts/OpenSans-CondLight.ttf');
+}
+@font-face {
+    font-family: "Opensanscondbold";
+    src: url('/fonts/OpenSans-CondBold-webfont.ttf');
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url('/fonts/OpenSans-Regular-webfont.ttf');
+}
 /*** website ***/
 
-h1, h2, h3,
+h2, h3,
 h4, h5, h6{
-  font-family: RileysonParent, Gothic, verdana, arial;
+  font-family: "Opensanscondlight", RileysonParent, Gothic, verdana, arial;
+}
+h1{
+  font-family: "Opensanscondbold", RileysonParent, Gothic, verdana, arial;
+  text-transform: uppercase;
 }
 
 body{
   /*font-family: 'PtSans', arial, verdana;*/
+  font-family: "Open Sans", sans-serif;
   background-color: white;
 }
 /*** section 1 ****/
@@ -77,6 +94,7 @@ section .content{
   text-align: center;
 
 }
+
 #section-1{
   position: relative;
   min-height: 500px;
@@ -101,9 +119,10 @@ section .content{
   color: white;
 }
 #section-1 .content h1{
-  font-size: 63px;
+  font-size: 73px;
   width: 66%;
   color: #81bf89;
+  font-weight: bold;
   /*margin-left: 150px;*/
 }
 #section-1 .content p{
@@ -150,7 +169,8 @@ section .content{
   padding-top: 20px;
   min-height: 200px;
 }
-#section-2 .content h1{
+#section-2 .content h2.section2{
+  text-transform: uppercase;
   font-size: 63px;
   margin: 0px 0px;
   color: #81bf89;
@@ -227,11 +247,35 @@ section .content{
   -moz-background-size: 100% auto;
 }
 #section-5{
-  background: transparent;
   height: 500px;
   margin-top: 182px;
+  background-color: #474354;
 }
-
+#section-5 .newsletter{
+  padding-top: 70px;
+}
+#section-5 .newsletter h3{
+  font-size: 46px;
+  color: #81bf89;
+}
+#section-5 .newsletter p{
+  font-size: 18px;
+  color: white;
+}
+#section-5 .newsletter input{
+  margin-right: 14px;
+  padding-left: 15px;
+  height: 50px;
+  border: none;
+}
+#section-5 .newsletter input.email{
+  width: 70%;
+}
+#section-5 .newsletter input.submit{
+  background-color: #81bf89;
+  color: white;
+  padding: 10px 23px;
+}
 /********** PAGES LAYOUT ***********/
 #page-banner-container{
   position: relative;
@@ -289,6 +333,7 @@ section .content{
 #hanea-features #item.powerful{
   background-color: #474354;
 }
+
 #hanea-features #item .cover-details h3{
   font-weight: 500;
   color: white;
@@ -296,9 +341,12 @@ section .content{
   font-size: 36px;
   text-align: center;
   margin-bottom: 10px;
+  font-family:'Opensanscondlight';
+    font-style:condensed;
 }
 #hanea-features #item .cover-details h3.dark{
   color: #000;
+
 }
 #hanea-features #item .cover-details h3.green{
   color: #81bf89;
@@ -349,4 +397,6 @@ section .content{
 #hanea-features #item .env{
   background-image: url("/images/env.png");
 }
-
+#section-2 .content h2.section2{
+  font-style:  'Opensanscondlight', RileysonParent, Gothic, verdana, arial !important;
+}
