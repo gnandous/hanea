@@ -46,6 +46,7 @@ header .navbar{
 }
 /*** font *****/
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
 
 @font-face {
     font-family: RileysonParent;
@@ -102,6 +103,7 @@ section .content{
 #section-1 .content h1{
   font-size: 63px;
   width: 66%;
+  color: #81bf89;
   /*margin-left: 150px;*/
 }
 #section-1 .content p{
@@ -151,7 +153,7 @@ section .content{
 #section-2 .content h1{
   font-size: 63px;
   margin: 0px 0px;
-  color: #a57a3c;
+  color: #81bf89;
 }
 #section-3 .content{
   padding-top: 174px;
@@ -255,3 +257,96 @@ section .content{
   margin: 50px 0px;
   color: #900;
 }
+/****** FOOTER ******/
+
+#footer{
+  background-color: #1d0b33;
+  min-height: 205px;
+  overflow: hidden;
+  position: relative;
+}
+#footer .menu{
+  width: 300px;
+  height: 50px;
+  color: #81bf89;
+  font-size: 14px;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+}
+/***** section features *****/
+#hanea-features{
+  min-height: 600px;
+}
+#hanea-features #item{
+  height: 300px;
+  background-color: #70aa7d;
+  min-height: 420px;
+}
+#hanea-features #item.clear{
+  background-color: #81bf89;
+}
+#hanea-features #item.powerful{
+  background-color: #474354;
+}
+#hanea-features #item .cover-details h3{
+  font-weight: 500;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#hanea-features #item .cover-details h3.dark{
+  color: #000;
+}
+#hanea-features #item .cover-details h3.green{
+  color: #81bf89;
+}
+#hanea-features #item .cover-details p{
+  font-size: 24px;
+  font-weight: 300;
+}
+#hanea-features #item .cover-details p.legend{
+  font-size: 15px;
+  color: white;
+}
+#hanea-features #item .cover-details p.clear{
+  color: white;
+}
+#hanea-features #item .cover-details{
+  text-align: center;
+  padding: 48px 48px;
+}
+#hanea-features #item .featured-icon{
+  background-color: #c00;
+  border-radius: 125px;
+  background-color: #474354;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  margin-top: 39px;
+  margin-bottom: -58px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 60%
+}
+#hanea-features #item .featured-icon.white{
+  background-color: white;
+}
+#hanea-features #item .health{
+    background-image: url("/images/brain.png");
+}
+#hanea-features #item .nuclear{
+  background-image: url("/images/wheels.png");
+}
+#hanea-features #item .sa{
+  background-image: url("/images/securite-alimentaire.png");
+}
+#hanea-features #item .elec{
+  background-image: url("/images/electricity.png");
+}
+#hanea-features #item .env{
+  background-image: url("/images/env.png");
+}
+
