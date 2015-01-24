@@ -28,7 +28,31 @@
         });
       })();
       $scope.uploadarea = function() {
-        return $(".ta-text").focus();
+        var selected_file;
+        selected_file = document.getElementById("attach_file");
+        $(".ta-text").focus();
+      };
+      $scope.loadFileFromDesktop = function(elem) {
+        var form, xhr;
+        form = new FormData();
+        xhr = new XMLHttpRequest();
+        form.append('file', elem.files[0]);
+        form.append('me', 'souleymane');
+        xhr.upload.addEventListener("progress", (function(e) {
+          var perc, pourcentage;
+          if (e.lengthComputable) {
+            perc = Math.round(e.loaded / e.total) * 100;
+            pourcentage = perc + "%";
+            $(".uploadbar").css("width", pourcentage);
+          }
+        }), false);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText);
+          }
+        };
+        xhr.open("POST", "/api/secure/article/file/post");
+        return xhr.send(form);
       };
       $scope.validate = function() {
         if (!this.content) {

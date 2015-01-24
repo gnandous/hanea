@@ -3,6 +3,11 @@
     src: url('/fonts/OpenSans-CondLight.ttf');
 }
 
+#article-read h1{
+  font-family: Opensanscondlight, Arial, Verdana;
+  text-transform: uppercase;
+  font-size: 30px;
+}
 .nav-hadmin{
   height: 46px;
   border-bottom: 1px solid rgba(0,0,0,0.15);
@@ -87,11 +92,23 @@ video#bgvideo{
   left: 0;
 }
 #sidebar{
+  font-family: Opensanscondlight, Arial, Verdana;
+  text-transform: uppercase;
   color: #D2D2DA;
   text-align: center;
   width: 220px;
   top: 0px;
   padding-top: 30px;
+
+}
+#sidebar a{
+  font-size: 20px;
+  display: inline-block;
+}
+#sidebar i{
+  font-size: 20px;
+  margin-right: 10px;
+  color: #f1f1f1;
 }
 #sidebar .divider{
   margin-bottom: 4px;
@@ -247,6 +264,13 @@ video#bgvideo{
 }
 .sidebar-nav li>a{
   font-size: 15px;
+}
+.sidebar-nav li:hover i,
+.sidebar-nav li:hover a{
+  color: #81bf89 !important;
+}
+.sidebar-nav li>a:hover{
+  color: #81bf89 !important;
 }
 .sn2{
   border-top: solid #D2D2DA 1px;
@@ -664,6 +688,10 @@ body{
   font-size: 20px;
   color: #0090D9;
   font-weight: bold;
+}
+#article-read .edit.article{
+  right: 30px;
+  top: 57px;
 }
 
 /*** editmedia **/

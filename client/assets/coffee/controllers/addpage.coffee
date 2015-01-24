@@ -7,6 +7,9 @@ define [
 ], (app) ->
   app.controller "AddPage", ($scope, $window, AuthenticationService, $http, $routeParams,$location, Model)->
     $scope.init = (->
+
+
+
       $scope.user = Model.data
       $scope.addpageloader = true
       $scope.addpageloadertxt = true
@@ -33,7 +36,29 @@ define [
     )()
 
     $scope.uploadarea = ()->
+      selected_file = document.getElementById("attach_file")
+      #selected_file.click()
       $(".ta-text").focus()
+      return
+
+    $scope.loadFileFromDesktop = (elem)->
+      form = new FormData()
+      xhr = new XMLHttpRequest()
+      form.append('file', elem.files[0])
+      form.append('me', 'souleymane')
+      xhr.upload.addEventListener "progress", ((e) ->
+        if e.lengthComputable
+          perc = Math.round(e.loaded / e.total) * 100
+          pourcentage = perc + "%"
+          $(".uploadbar").css "width", pourcentage
+        return
+      ), false
+      xhr.onreadystatechange = ->
+        if xhr.readyState is 4 and xhr.status is 200
+          console.log xhr.responseText
+        return
+      xhr.open("POST", "/api/secure/article/file/post")
+      xhr.send(form)
 
     ## validate function ()
     $scope.validate = ()->
