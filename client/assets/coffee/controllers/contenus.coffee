@@ -2,8 +2,9 @@ define [
   'app'
   'jquery'
   'underscore'
+  'chart'
   'directives/contentmenu'
-], (app, $, _, tinymce, jqtinymce)->
+], (app, $, _, chart, tinymce, jqtinymce)->
   app.controller "contenus", ($scope, $window, $http, Model)->
     $scope.user = Model.data
     $scope.content = ""
@@ -14,7 +15,35 @@ define [
       subtitle : $("#addcontent").find("#subtitle")
       content : $("#addcontent").find("#content").find('.form-control')
       publication : $("#addcontent").find("#published")
+    $scope.data =
+      labels: ["January", "February", "March", "April", "May", "June", "July"]
+      datasets: [
+        {
+          label: "My First dataset"
+          fillColor: "rgba(220,220,220,0.2)"
+          strokeColor: "rgba(220,220,220,1)"
+          pointColor: "rgba(220,220,220,1)"
+          pointStrokeColor: "#fff"
+          pointHighlightFill: "#fff"
+          pointHighlightStroke: "rgba(220,220,220,1)"
+          data: [65, 59, 80, 81, 56, 55, 40]
+        }
+        {
+          label: "My Second dataset"
+          fillColor: "rgba(151,187,205,0.2)"
+          strokeColor: "rgba(151,187,205,1)"
+          pointColor: "rgba(151,187,205,1)"
+          pointStrokeColor: "#fff"
+          pointHighlightFill: "#fff"
+          pointHighlightStroke: "rgba(151,187,205,1)"
+          data: [28, 48, 40, 19, 86, 27, 90]
+        }
+      ]
+
     $scope.init = ()->
+      if document.getElementById("DashboardChart")
+        ctx = document.getElementById("DashboardChart").getContext("2d")
+        myNewChart = new Chart(ctx).Line(@data)
     $scope.change = (event)->
       if $(document.activeElement).val()
         $(document.activeElement).removeClass('parsley-error')

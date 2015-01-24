@@ -12,7 +12,8 @@
       jquery: 'plugins/jquery/jquery.min',
       jquery_cookie: 'plugins/jquery/jquery.cookie.min',
       underscore: 'plugins/underscore/underscore',
-      text: 'plugins/require/text.min'
+      text: 'plugins/require/text.min',
+      chart: 'plugins/chart/Chart.min'
     },
     shim: {
       jquery: {

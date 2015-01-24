@@ -22,7 +22,7 @@ require.config
 
     # text plugins (angular)
     text: 'plugins/require/text.min'
-
+    chart: 'plugins/chart/Chart.min'
   shim:
     jquery:
       exports: '$'
