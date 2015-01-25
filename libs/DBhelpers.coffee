@@ -2,6 +2,8 @@ Article = require '../models/article'
 ArticleParagraphe = require '../models/ArticleParagraphe'
 ArticleMedia = require '../models/Articlemedia'
 ArticleItem = require '../models/articleitem'
+_ = require 'underscore'
+AWS = require './aws'
 
 module.exports =
   PopulateArticleItems: (article_id, callback)->
@@ -30,10 +32,21 @@ module.exports =
             next()
       )()
   RemoveApropriateItem: (article_id)->
-    ArticleMedia.remove
+    str = "https://hanea-assets.s3.amazonaws.com/"
+    ArticleMedia.find
       article_id: article_id
-    , (err)->
+    , (err, list)->
       if err then console.log err
+      _.each list, (item, index)->
+        if item.content
+          distPath = item.content.slice(str.length)
+          AWS.destroy distPath, (err, data)->
+            if err then console.log err
+            ArticleMedia.remove
+              article_id: item._id
+            , (err)->
+              if err then console.log err
+
     ArticleParagraphe.remove
       article_id: article_id
     , (err)->

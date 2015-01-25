@@ -4,6 +4,16 @@ block content
   block banner
     include page-banner--tpl.jade
   block page-content
-    .container
-      p
-        | !{page.content}
+    .container.page-content
+      .col-md-8
+        p
+          | !{page.content}
+      .col-md-4
+        h1.contact-hanea-title
+          | SUIVEZ-NOUS !
+        .contact-hanea
+          .brick.fcb
+          .brick.twitter
+        h1.contact-hanea-title.video
+          | #VIDEO
+        iframe(width="300" height="169" src="http://www.youtube.com/embed/PdKT71YHh8s?modestbranding=1&amp;iv_load_policy=3&amp;loop=1&amp;rel=0&amp;showinfo=0" frameborder="0")

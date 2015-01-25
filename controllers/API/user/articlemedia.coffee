@@ -2,6 +2,8 @@ validator = require '../../../libs/validator'
 User = require '../../../models/user'
 _ = require 'underscore'
 ArticleMedia = require '../../../models/Articlemedia'
+AWS = require '../../../libs/aws'
+fs = require 'fs'
 
 module.exports =
   index: (req, res, next)->
@@ -13,17 +15,28 @@ module.exports =
 
   create: (req, res, next)->
     if req.files.file?
-      ##TODO handle file transfert s3
-      res.send req.files.file.name
+      res.send req.files
     else
+      distPath = "article-#{req.body.article_id}/#{req.body.medianame}"
       articleMedia = new ArticleMedia
         article_id: req.body.article_id
-        content: req.body.content
+        content: "/uploads/#{req.body.medianame}"
+        #content: "https://hanea-assets.s3.amazonaws.com/#{distPath}"
         title: req.body.title
       articleMedia.save (err, articleMedia)->
         if err
           return res.status(400).send(err)
         else
+          fs.readFile req.body.content, (err, data)->
+            if err then return res.status(400).send err
+            AWS.upload data, distPath, (err, url)->
+              if err then return res.status(400).send err
+              condition =
+                _id: articleMedia._id
+              update =
+                content: "https://hanea-assets.s3.amazonaws.com/#{distPath}"
+              ArticleMedia.findOneAndUpdate condition, update, (err, articleMedia)->
+                if err then return res.status(400).send err
           return res.send(articleMedia)
 
   show: (req, res, next)->

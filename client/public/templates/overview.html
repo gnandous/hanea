@@ -17,7 +17,7 @@
                   <div ng-if="item.item_type == 'MEDIA'" class='media'>
                   <div class='edit'><a href='/api/article/{{article._id}}/media/{{item.item_id._id}}/edit'><i class="fa fa-pencil-square-o"></i></a></div>
                     <h1>{{item.item_id.title}}</h1>
-                    <img ng-src="/uploads/{{item.item_id.content}}"/>
+                    <img ng-src="{{item.item_id.content}}"/>
                   </div>
                   <div class='paragraphe' ng-if="item.item_type == 'PARAGRAPHE'">
                   <div class='edit'><a href='/api/paragraphe/{{item.item_id._id}}/edit'><i class="fa fa-pencil-square-o"></i></a></div>

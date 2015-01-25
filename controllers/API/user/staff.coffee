@@ -67,7 +67,6 @@ module.exports =
       if err
         return res.status(400).send(err)
       distPath = staff.avatar.slice(str.length)
-      console.log distPath
       AWS.destroy distPath, (err, data)->
         if err then res.status(404).send(err)
         res.send 200

@@ -28,12 +28,7 @@
             <div class="form-group">
               <label class="form-label">Content </label><span class="asterisk">*</span>
               <span class="tips">Set the content of your post</span>
-              <!--
-              <input id="attach_file" type='file' class='hidden' onchange="angular.element(this).scope().loadFileFromDesktop(this)">
-              -->
-              <div class='h-uploader'>
-                Upload : <i class="fa fa-picture-o" ng-click="uploadarea()"></i>
-              </div>
+
               <div class="controls">
                 <text-angular ta-toolbar="[['h1','h2','h3'],['bold','italics'], ['justifyLeft','justifyCenter','justifyRight', 'clear', 'ul', 'ol']]" class='ta-editor' id="content"  ng-model="content"></text-angular>
                 <!--

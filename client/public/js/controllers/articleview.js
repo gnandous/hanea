@@ -4,7 +4,6 @@
       $scope.user = Model.data;
       $scope.init = function() {
         return $http.get("/api/secure/article/" + $routeParams.id).success(function(data, status, headers, config) {
-          console.log(data);
           return $scope.article = data;
         }).error(function(data, status, headers, config) {
           return console.log(data);

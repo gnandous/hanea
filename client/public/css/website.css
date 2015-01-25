@@ -301,9 +301,49 @@ section .content{
   margin: 50px 0px;
   color: #900;
 }
+.page-content h2{
+  text-transform: uppercase;
+  color: #000;
+}
+.page-content{
+  color: #111;
+  font-weight: 400;
+}
+.page-content .contact-hanea{
+  padding: 10px 10px;
+  width: 300px;
+  height: 100px;
+  border-radius: 5px;
+  border: solid #eee 3px;
+}
+.page-content .contact-hanea.video{
+}
+.page-content .contact-hanea .brick{
+  width: 60px;
+  height: 100%;
+  display: inline-block;
+  margin-right: 10px;
+}
+.page-content .contact-hanea .brick.fcb{
+  background-color: #3b5999!important;
+  background: url('/images/facebook.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 120%;
+}
+.page-content .contact-hanea .brick.twitter{
+  background-color: #3aaae1!important;
+  background: url('/images/twitter.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 78%;
+}
+.page-content .contact-hanea-title{
+}
 /****** FOOTER ******/
 
 #footer{
+  margin-top: 100px;
   background-color: #1d0b33;
   min-height: 205px;
   overflow: hidden;
@@ -399,4 +439,9 @@ section .content{
 }
 #section-2 .content h2.section2{
   font-style:  'Opensanscondlight', RileysonParent, Gothic, verdana, arial !important;
+}
+
+.page-content h1{
+  font-family: Opensanscondbold, Arial, Verdana;
+  font-size: 29px;
 }

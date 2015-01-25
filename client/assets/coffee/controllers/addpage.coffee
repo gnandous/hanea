@@ -34,12 +34,8 @@ define [
           $("#dropFile").append("<img width='100%' height='400px' src='/uploads/#{data.name}'/>")
 
     )()
+    $scope.uploadarea = (event)->
 
-    $scope.uploadarea = ()->
-      selected_file = document.getElementById("attach_file")
-      #selected_file.click()
-      $(".ta-text").focus()
-      return
 
     $scope.loadFileFromDesktop = (elem)->
       form = new FormData()

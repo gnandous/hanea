@@ -317,6 +317,11 @@ body{
   min-height: 150px;
 
 }
+.content-type h3{
+  font-family: Opensanscondlight, Verdana, Arial;
+  text-transform: uppercase;
+  font-size: 28px;
+}
 
 .content-type a{
   font-weight: bold;
@@ -480,6 +485,9 @@ body{
 }
 .editcontent .form-control{
   background-color: #eee !important;
+  font-family: Opensanscondlight, Arial, Verdana;
+  text-transform: uppercase;
+  font-size: 16px;
 }
 .editcontent .parsley-error{
   background-color: #F2DEDE !important;

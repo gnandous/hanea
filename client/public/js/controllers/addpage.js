@@ -27,11 +27,7 @@
           }
         });
       })();
-      $scope.uploadarea = function() {
-        var selected_file;
-        selected_file = document.getElementById("attach_file");
-        $(".ta-text").focus();
-      };
+      $scope.uploadarea = function(event) {};
       $scope.loadFileFromDesktop = function(elem) {
         var form, xhr;
         form = new FormData();

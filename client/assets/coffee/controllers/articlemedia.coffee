@@ -22,9 +22,11 @@ define [
         previewTemplate: "<div></div>"
         success:(file, data)->
           $scope.$apply ()->
-            $scope.media.content = data
+            console.log data.file.name
+            $scope.media.content = data.file.path
+            $scope.media.medianame = data.file.name
 
-          $("#dropFile").append("<img width='100%' height='400px' src='/uploads/#{data}'/>")
+          $("#dropFile").append("<img width='100%' height='400px' src='/uploads/#{data.file.name}'/>")
     )()
 
     $scope.create = ()->

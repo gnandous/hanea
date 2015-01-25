@@ -20,9 +20,10 @@
           previewTemplate: "<div></div>",
           success: function(file, data) {
             $scope.$apply(function() {
-              return $scope.media.content = data;
+              $scope.media.content = data.path;
+              return $scope.media.medianame = data.file.name;
             });
-            return $("#dropFile").append("<img width='100%' height='400px' src='/uploads/" + data + "'/>");
+            return $("#dropFile").append("<img width='100%' height='400px' src='/uploads/" + data.file.name + "'/>");
           }
         });
       })();

@@ -27,8 +27,9 @@ define [
         previewTemplate: "<div></div>"
         success:(file, data)->
           $scope.$apply ()->
-            $scope.media.content = data
-          $("#dropFile").append("<img width='100%' height='400px' src='/uploads/#{data}'/>")
+            $scope.media.content = data.path
+            $scope.media.medianame = data.file.name
+          $("#dropFile").append("<img width='100%' height='400px' src='/uploads/#{data.file.name}'/>")
     )()
 
     $scope.update = ()->
