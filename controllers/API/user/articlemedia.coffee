@@ -21,7 +21,6 @@ module.exports =
       articleMedia = new ArticleMedia
         article_id: req.body.article_id
         content: "/uploads/#{req.body.medianame}"
-        #content: "https://hanea-assets.s3.amazonaws.com/#{distPath}"
         title: req.body.title
       articleMedia.save (err, articleMedia)->
         if err

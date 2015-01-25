@@ -36,17 +36,17 @@ module.exports =
     ArticleMedia.find
       article_id: article_id
     , (err, list)->
+      ArticleMedia.remove
+        article_id: article_id
+      , (err)->
+        if err then console.log err
+
       if err then console.log err
       _.each list, (item, index)->
         if item.content
           distPath = item.content.slice(str.length)
           AWS.destroy distPath, (err, data)->
             if err then console.log err
-            ArticleMedia.remove
-              article_id: item._id
-            , (err)->
-              if err then console.log err
-
     ArticleParagraphe.remove
       article_id: article_id
     , (err)->
