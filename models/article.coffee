@@ -16,6 +16,8 @@ Article = new Schema
     default: false
   title:
     type: String
+  resum:
+    type: String
   content:
     type: String
   slug:
@@ -27,7 +29,7 @@ Article = new Schema
   ]
 
 Article.path('title').required(true, 'Title is required')
-
+Article.path('resum').required(true, 'resum is required')
 Article.post 'remove', (doc)->
   ArticleItem.remove
     article_id: doc._id

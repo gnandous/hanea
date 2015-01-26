@@ -788,3 +788,10 @@ body{
 .condensed.green{
   color: #72a114;
 }
+.article-cover{
+  width: 100%;
+}
+.article-cover-image{
+  width: 100% !important;
+  height: 300px !important;
+}

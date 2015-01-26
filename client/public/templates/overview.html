@@ -11,6 +11,9 @@
             <div class='panel-body'>
               <div id="article-read">
                 <h1>{{article.title}}</h1>
+                <div class='article-cover'>
+                  <img class="article-cover-image"ng-src="{{article.illustration}}"/>
+                </div>
                 <div class='edit article'><a href='/api/article/update/{{article._id}}'><i class="fa fa-pencil-square-o"></i></a></div>
                 <p ng-bind-html="article.content"></p>
                 <div class="items" ng-repeat='item in article.items'>

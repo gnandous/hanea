@@ -20,4 +20,5 @@ module.exports = () ->
   websiteRouter.get '/', (req, res, next)->
     return res.render 'website/home/home',
       title: 'Hello'
+  websiteRouter.get '/articles', controllers.website.article.index
   return websiteRouter

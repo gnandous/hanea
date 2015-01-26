@@ -1,2 +1,3 @@
-module.exports = 
-	API: require './API'
+module.exports =
+  API: require './API'
+  website: require './website'

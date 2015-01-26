@@ -20,6 +20,11 @@
                     <input type="text" class="form-control" id="exampleInputEmail1" name='title' placeholder='title' ng-model='model.title'>
                     <label class="control-label" for="title"><span class="asterisk">{{errors.title.message}}</span></label>
                   </div>
+                  <div class="form-group">
+                    <label for="Title">Resum</label><span class="asterisk">*</span>
+                    <textarea class="form-control" id="exampleInputEmail1" name='title' placeholder='title' ng-model='model.resum'></textarea>
+                    <label class="control-label" for="title"><span class="asterisk">{{errors.resum.message}}</span></label>
+                  </div>
                   <label>Main Image</label>
                   <!--:: dropzone file -->
                   <div class="dropzone" id="dropFile" style='margin-bottom:20px;'>

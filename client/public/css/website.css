@@ -22,11 +22,12 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 header .navbar{
+  background-color: #1ABC9C;
   /*
   background-color: #a57a3c;
   background: transparent;
   */
-  background-color: rgba(165, 122, 60, 0.0);
+  /*background-color: rgba(165, 122, 60, 0.0);*/
 }
 .navbar-default .navbar-nav > li{
   cursor: pointer;
@@ -38,12 +39,12 @@ header .navbar{
 
 .navbar-default .navbar-nav > li > a:hover{
   color: white;
+  text-decoration: underline;
 }
 .navbar-nav > li > a{
   padding: 16px;
 }
 .navbar-nav > li:hover{
-  background-color: #8c6835;
 }
 /*** font *****/
 
@@ -444,4 +445,34 @@ section .content{
 .page-content h1{
   font-family: Opensanscondbold, Arial, Verdana;
   font-size: 29px;
+}
+/***** articles page ******/
+.articles-list-item{
+  width: 280px;
+  border: solid #eee 3px;
+}
+.website-page-content{
+  margin-top: 60px;
+}
+.website-page-content #container{
+  width: 80%;
+}
+.website-page-content #container img{
+  width: 101%;
+  margin: -2px -1px;
+}
+.website-page-content #container .articles-list-item .infos{
+  color: #000;
+  padding: 15px;
+}
+.website-page-content #container h1,
+.website-page-content #container p
+{
+  width: 100%;
+  text-align: center;
+}
+.website-page-content #container h1{
+}
+.website-page-content .article-item-paragraphe{
+  font-size: 16px;
 }

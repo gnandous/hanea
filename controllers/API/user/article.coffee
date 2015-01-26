@@ -3,6 +3,8 @@ User = require '../../../models/user'
 DbHelpers = require '../../../libs/dbhelpers'
 _ = require 'underscore'
 Article = require '../../../models/article'
+AWS = require '../../../libs/aws'
+fs = require 'fs'
 
 module.exports =
   index: (req, res, next)->
@@ -17,14 +19,27 @@ module.exports =
     article = new Article
       creator: req.user.id
       title: req.body.title
+      resum: req.body.resum
       content: req.body.content
-      illustrator: req.body.illustration
+      illustration: "uploads/#{req.body.illustrationname}"
       categories: req.body.categories
     article.save (err, article)->
       if err
         return res.status(400).send(err)
       else
-        return res.status(200).send(article)
+        if req.body.illustrationname?
+          distPath = "article-#{article._id}/#{req.body.illustrationname}"
+          fs.readFile req.body.illustration, (err, data)->
+            if err then return res.status(400).send err
+            AWS.upload data, distPath, (err, url)->
+              if err then return res.status(400).send err
+              condition =
+                _id: article._id
+              update =
+                illustration: "https://hanea-assets.s3.amazonaws.com/#{distPath}"
+              Article.findOneAndUpdate condition, update, (err, updatearticle)->
+                if err then return res.status(400).send err
+        return res.send article
 
   show: (req, res, next)->
     conditions =
@@ -54,11 +69,16 @@ module.exports =
         return res.status(200).send(article)
 
   destroy: (req, res, next)->
+    str = "https://hanea-assets.s3.amazonaws.com/"
     condition =
       _id: req.params.id
     Article.findOne condition, (err, article)->
       return res.status(404).send(err) unless article
       DbHelpers.RemoveApropriateItem req.params.id
+      if article.illustration
+        distPath = article.illustration.slice(str.length)
+        AWS.destroy distPath, (err, data)->
+          if err then console.log err
       article.remove()
       Article.find()
       .populate("creator")
@@ -70,5 +90,5 @@ module.exports =
 
   file: (req, res, next)->
     #must send to amazon s3 depending on host solution
-    return res.status(200).send(req.files.file.name)
+    return res.status(200).send(req.files.file)
 

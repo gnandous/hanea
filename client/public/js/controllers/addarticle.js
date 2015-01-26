@@ -7,7 +7,7 @@
       $scope.model = {
         title: "",
         content: "",
-        illustration: "",
+        resum: "",
         published: false,
         categories: []
       };
@@ -39,9 +39,10 @@
           previewTemplate: "<div></div>",
           success: function(file, data) {
             $scope.$apply(function() {
-              return $scope.model.illustration = data;
+              $scope.model.illustration = data.path;
+              return $scope.model.illustrationname = data.name;
             });
-            return $("#dropFile").append("<img width='100%' height='400px' src='/uploads/" + data + "'/>");
+            return $("#dropFile").append("<img width='100%' height='400px' src='/uploads/" + data.name + "'/>");
           }
         });
       };
@@ -63,9 +64,11 @@
           type: 'POST',
           data: {
             title: this.model.title,
+            resum: this.model.resum,
             content: this.model.content,
             published: this.model.published,
             illustration: this.model.illustration,
+            illustrationname: this.model.illustrationname,
             categories: JSON.stringify(this.model.categories)
           },
           success: function(data) {

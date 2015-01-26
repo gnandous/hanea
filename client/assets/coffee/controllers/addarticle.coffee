@@ -12,7 +12,7 @@ define [
     $scope.model =
       title: ""
       content: ""
-      illustration: ""
+      resum: ""
       published: false
       categories: []
 
@@ -43,8 +43,9 @@ define [
         previewTemplate: "<div></div>"
         success:(file, data)->
           $scope.$apply ()->
-            $scope.model.illustration = data
-          $("#dropFile").append("<img width='100%' height='400px' src='/uploads/#{data}'/>")
+            $scope.model.illustration = data.path
+            $scope.model.illustrationname = data.name
+          $("#dropFile").append("<img width='100%' height='400px' src='/uploads/#{data.name}'/>")
 
     $scope.init()
 
@@ -64,9 +65,11 @@ define [
         type: 'POST'
         data:
           title: @model.title
+          resum: @model.resum
           content: @model.content
           published: @model.published
           illustration: @model.illustration
+          illustrationname: @model.illustrationname
           categories: JSON.stringify @model.categories
         success: (data)->
           $scope.$apply ()->
