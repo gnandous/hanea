@@ -30,6 +30,15 @@ Article = new Schema
 
 Article.path('title').required(true, 'Title is required')
 Article.path('resum').required(true, 'resum is required')
+
+Article.pre "save", (next, done)->
+  unless @title
+    done new Error("Slug can not be generated without title")
+  @slug = Slug.Slugify @title
+  @slug = "#{@slug}.html"
+  next()
+
+
 Article.post 'remove', (doc)->
   ArticleItem.remove
     article_id: doc._id

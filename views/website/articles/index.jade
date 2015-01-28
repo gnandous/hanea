@@ -1,10 +1,12 @@
 extends ../../layout
 block content
+  block page-banner
+    include article-banner-layout.jade
   .container.website-page-content
     .row
       .col-md-8#container
         if (articles)
           each kw in articles
             include article-item-layout.jade
-      .col-md-4
+      .col-md-2.social
 

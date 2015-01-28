@@ -135,6 +135,12 @@ define [
       controllerUrl: "controllers/editmedia"
       resolve:
         Model: _Ressources.Model
+    ).when("/api/ticket", angularAMD.route
+      templateUrl: '/../templates/ticket.html'
+      controller: "Ticket"
+      controllerUrl: "controllers/ticket"
+      resolve:
+        Model: _Ressources.Model
     ).otherwise redirectTo: "/api"
     $locationProvider.html5Mode(true)
 

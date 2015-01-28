@@ -282,6 +282,7 @@ video#bgvideo{
 body{
   margin-top: 0px;
   background-color: #EEEEEE;
+  -webkit-font-smoothing: antialiased;
 }
 
 .content-menu .navbar{
@@ -794,4 +795,97 @@ body{
 .article-cover-image{
   width: 100% !important;
   height: 300px !important;
+}
+/**** ticket ***/
+.newticket{
+  width: 100%;
+  padding: 10px;
+  background-color: #f5f5f5;
+  text-align: right;
+}
+.newticket .new-issue{
+  font-family: "Opensanscondlight", Arial, Verdana;
+}
+.newticket .new-issue .button-green{
+  background: #72a114;
+  color: #fff;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 7px 40px 6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+.newticket .new-issue .button-green.icon-type{
+    padding: 7px 6px 6px;
+}
+
+section.empty-issue{
+  padding: 5% 0;
+  text-align: center;
+  margin-top: 30px;
+  width: 100%;
+  min-height: 10rem;
+  border: 1px dashed #b8b8b8;
+  color: #b8b8b8;
+  font-family: "Opensanscondlight", Arial, Verdana;
+}
+section.empty-issue i{
+  font-size: 78px;
+}
+section.empty-issue .title{
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+/**** light-box *****/
+.light-box{
+  background: rgba(255,255,255,.95);
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 99910;
+  display: flex;
+  text-align: center;
+  -moz-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+}
+
+.light-box .light-box-form{
+  width: 700px;
+  height: 400px;
+  margin: auto;
+}
+.light-box .light-box-form h1{
+  text-transform: uppercase;
+
+}
+.light-box .light-box-form input{
+  font-family: "Opensanscondlight", Arial, Verdana;
+  font-size: 16px;
+  border-radius: 0px;
+  background: #f5f5f5 !important;
+  border: 1px solid #b8b8b8 !important;
+  color: #444 !important;
+}
+.light-box .light-box-form textarea{
+  height: 200px;
+  font-size: 16px;
+  border-radius: 0px;
+  background: #f5f5f5 !important;
+  border: 1px solid #b8b8b8 !important;
+  color: #444 !important;
+}
+.light-box .light-box-close{
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  z-index: 100000;
+  cursor: pointer;
+}
+.light-box .light-box-close .close-button{
+  color: #000 !important;
+  font-weight: bold;
+  font-size: 17px;
 }

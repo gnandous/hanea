@@ -1,0 +1,44 @@
+<!-- include sidebar -->
+<div sidebarright></div>
+<!--- light-box -->
+<div class='light-box animated fadeIn' ng-class="{fadeIn:lightbox}" ng-show='lightbox'>
+  <div class='light-box-close' ng-click='ctrl.hideLightBox()'>
+    <span class='close-button'>X</span>
+  </div>
+  <form class='light-box-form'>
+    <h1 class="condensed">Add Issue</h1>
+    <div class="form-group">
+      <input type="text" class="form-control" id="subject" placeholder="Subject">
+    </div>
+    <div class='form-group'>
+      <textarea class="form-control" id="exampleInputEmail1" name='title' placeholder='title' ng-model='model.resum'></textarea>
+    </div>
+  </form>
+</div>
+<!--- light-box -->
+<div class='wrapper'>
+  <!-- include contentmenu -->
+  <div contentmenu></div>
+  <div class='container'>
+    <div id='main-content'>
+      <div class='panel'>
+        <div class='panel-body'>
+          <h1>
+          <span class="condensed">HANEA</span><span class="condensed green">TICKETS</span>
+          </h1>
+          <div class='newticket'>
+            <div class='new-issue'>
+              <a class='button-green' ng-click="ctrl.addNewIssue()">+ NEW ISSUE</a>
+              <a class='button-green icon-type'><i class="icon-comment-alt"></i></a>
+            </div>
+          </div>
+          <section class='empty-issue'>
+            <div><i class="icon-doc"></i></div>
+            <div><span class="title">There are no issues to report :-)</span></div>
+            <span>Did you find an issue?</span>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

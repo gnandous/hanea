@@ -35,6 +35,7 @@ header .navbar{
 .navbar-default .navbar-nav > li > a{
   color: white;
   font-size: 17px;
+  font-weight: 300;
 }
 
 .navbar-default .navbar-nav > li > a:hover{
@@ -476,3 +477,22 @@ section .content{
 .website-page-content .article-item-paragraphe{
   font-size: 16px;
 }
+#article-banner-container{
+  width: 100%;
+  background-color: rgba(33, 149, 126, 0.9);
+  height: 150px;
+}
+#article-banner-container .banner{
+  padding-top: 42px;
+  margin-top: 30px;
+}
+#article-banner-container .banner h1{
+  width: 100%;
+  color: white;
+}
+#article-banner-cover{
+  background-image: url(/images/slide-1.jpg);
+}
+
+
+

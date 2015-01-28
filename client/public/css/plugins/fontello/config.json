@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "search",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
@@ -13,6 +13,12 @@
       "src": "fontawesome"
     },
     {
+      "uid": "8f8278fbe5a2a0ea836be3c408b005d2",
+      "css": "star-half",
+      "code": 59399,
+      "src": "fontawesome"
+    },
+    {
       "uid": "381da2c2f7fd51f8de877c044d7f439d",
       "css": "picture",
       "code": 59393,
@@ -23,6 +29,12 @@
       "css": "signal",
       "code": 59394,
       "src": "fontawesome"
+    },
+    {
+      "uid": "d52e2eb2073c96a2a33487779090f899",
+      "css": "doc-alt",
+      "code": 59400,
+      "src": "iconic"
     },
     {
       "uid": "d1a7ajpi3149rk5q4861jw9f2lzg27d1",
