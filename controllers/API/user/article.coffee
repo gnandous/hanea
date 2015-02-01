@@ -89,6 +89,7 @@ module.exports =
         return res.status(200).send(articles)
 
   file: (req, res, next)->
+    console.log req.files
     #must send to amazon s3 depending on host solution
     return res.status(200).send(req.files.file)
 

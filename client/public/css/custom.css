@@ -889,3 +889,18 @@ section.empty-issue .title{
   font-weight: bold;
   font-size: 17px;
 }
+
+/******* upload file ******/
+
+.uploader{
+  cursor: pointer;
+  height: 200px;
+  width: 150px;
+  border: dashed #cccccc 1px;
+  text-align: center;
+  color: #868686;
+  padding: 56px 0px;
+  font-size: 50px;
+}
+
+

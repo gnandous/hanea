@@ -1,0 +1,17 @@
+<!-- include sidebar -->
+<div sidebarright></div>
+<!--- light-box -->
+<div class='wrapper'>
+  <!-- include contentmenu -->
+  <div contentmenu></div>
+  <div class='container'>
+    <div id='main-content'>
+      <div class='panel-body'>
+        <input type='file' class='hidden' id='uplaoderCtrl' onchange='angular.element(this).scope().Ctrl.loadFileFromDesktop(this)'>
+        <div class='uploader' ng-click='Ctrl.setFile()'>
+          <i class='fa fa-plus'></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

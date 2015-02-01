@@ -141,6 +141,12 @@ define [
       controllerUrl: "controllers/ticket"
       resolve:
         Model: _Ressources.Model
+    ).when("/api/letter", angularAMD.route
+      templateUrl: '/../templates/letter.html'
+      controller: "Letter"
+      controllerUrl: "controllers/letter"
+      resolve:
+        Model: _Ressources.Model
     ).otherwise redirectTo: "/api"
     $locationProvider.html5Mode(true)
 
