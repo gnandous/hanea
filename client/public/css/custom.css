@@ -903,4 +903,8 @@ section.empty-issue .title{
   font-size: 50px;
 }
 
-
+.uploadbar{
+  width: 0%;
+  height: 8px;
+  background-color: #72a114;
+}

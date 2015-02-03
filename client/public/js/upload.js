@@ -37,6 +37,7 @@
       xhr.onload = function(){
         if (xhr.status === 200) {
           this_upload.onProgress(100, 'Upload completed.');
+          return this_upload.onFinishPut(this_upload.name)
         } else{
           return this_upload.onError('Upload error: ' + xhr.status);
         }
