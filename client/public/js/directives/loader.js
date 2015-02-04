@@ -2,14 +2,14 @@
   define(['angularAMD'], function(angularAMD) {
     return angularAMD.directive('loader', function() {
       return {
+        restrict: 'E',
         scope: {
-          loader: "=",
-          status: '='
+          progress: '=progressbar'
         },
-        link: function($scope, $elem, attrs) {
-          console.log(attrs);
-          return console.log($scope.status);
-        }
+        link: function($scope, $el, attrs) {
+          return console.log($el.children().find(".uploadbar"));
+        },
+        template: "<div class='uploadbar' style='width:{{progress}}'></div>"
       };
     });
   });

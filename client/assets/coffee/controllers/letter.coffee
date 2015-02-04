@@ -12,6 +12,7 @@ define [
       $scope.content_state = false
       $scope.lightbox = false
       $scope.stat = "Not upload yet"
+      $scope.progress = "0%;"
     )()
 
     $scope.Ctrl =
@@ -24,7 +25,8 @@ define [
           url: '/api/secure/article/file/post'
           file_dom_selector: "uplaoderCtrl"
           onProgress: (percent, message)->
-            console.log percent
+            $scope.$apply ()->
+              $scope.progress = percent + "%;"
           onFinishPut: (publicUrl)->
             console.log publicUrl
 

@@ -5,7 +5,8 @@
         $scope.user = Model.data;
         $scope.content_state = false;
         $scope.lightbox = false;
-        return $scope.stat = "Not upload yet";
+        $scope.stat = "Not upload yet";
+        return $scope.progress = "0%;";
       })();
       return $scope.Ctrl = {
         setFile: function() {
@@ -16,7 +17,15 @@
           return haupload = new HAUpload({
             name: "test",
             url: '/api/secure/article/file/post',
-            file_dom_selector: "uplaoderCtrl"
+            file_dom_selector: "uplaoderCtrl",
+            onProgress: function(percent, message) {
+              return $scope.$apply(function() {
+                return $scope.progress = percent + "%;";
+              });
+            },
+            onFinishPut: function(publicUrl) {
+              return console.log(publicUrl);
+            }
           });
         }
       };

@@ -2,9 +2,9 @@ define [
   'angularAMD'
 ], (angularAMD)->
   angularAMD.directive 'loader', ()->
+    restrict: 'E'
     scope:
-      loader: "="
-      status: '='
-    link: ($scope, $elem, attrs)->
-      console.log attrs
-      console.log $scope.status
+      progress: '=progressbar'
+    link: ($scope, $el, attrs)->
+      console.log $el.children().find(".uploadbar")
+    template: "<div class='uploadbar' style='width:{{progress}}'></div>"
